@@ -16,13 +16,12 @@
 
 body {
     font-family: var(--primary-font-family);
-    text-align;
+    text-align: center;
 }
 
 header {
     text-transform: uppercase;
     width: 100%;
-    text-align: center;
     background-color: bisque;
       }
 main {
@@ -69,6 +68,7 @@ main {
     justify-content: center;
     }
 
+/*Footer*/
 footer {
     text-align: center;
 }
