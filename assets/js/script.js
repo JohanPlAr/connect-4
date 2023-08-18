@@ -27,13 +27,44 @@ span.onclick = function () {
 runGame();
 });
 
+//Sets turns to 0
+//Sets Score to 0
+//Displays next play for user
+
 function runGame() {
     let gameArrays = [[], [], [], [], [], [], []];
     let turn = 0;
-    let gameColumns = document.getElementsByClassName("game-column");
+    const gameColumns = document.getElementsByClassName("game-column");
     let p1Score = 0;
     let p2Score = 0;
     document.getElementById("p1-turn").style.backgroundColor = "red";
     document.getElementById("p1-turn-text").innerText = "Next Play";
 
+    function markColumn() {
+        let markedColumns = document.querySelectorAll(".game-column");
+        markedColumns.forEach(function (column) {
+          column.addEventListener("mouseover", function () {
+            column.style.backgroundColor = "";
+            let boxes = Array.from(column.querySelectorAll(".game-box"));
+            boxes = boxes.filter((x) => !x.classList.contains("active"));
+            console.log(boxes);
+            if (turn % 2 === 0) {
+              if (boxes.length>0){
+              boxes.at(-1).style.backgroundColor = "red";}
+            } else {if (boxes.length>0) {
+              boxes.at(-1).style.backgroundColor = "yellow";
+            }
+          }
+          });
+          column.addEventListener("mouseout", function () {
+            let boxes = Array.from(column.querySelectorAll(".game-box"));
+            boxes = boxes.filter((x) => !x.classList.contains("active"));
+            column.style.backgroundColor = "initial";
+            if (boxes.length>0){
+            boxes.at(-1).style.removeProperty("background-color");
+          }
+          });
+        });
+      }
+      markColumn()
 }
