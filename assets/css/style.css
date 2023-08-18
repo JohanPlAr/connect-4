@@ -9,8 +9,6 @@
     
 }
 
-
-
 * {
     margin: 0;
     padding: 0;
@@ -19,11 +17,12 @@
   }
 
 body {
+    display:flex;
+    flex-direction: column;
     font-family: var(--primary-font-family);
     text-align: center;
     min-height: 100vh;
-    flex-direction: column;
-}
+    }
 
 header {
     text-transform: uppercase;
@@ -102,9 +101,6 @@ button:hover{cursor:pointer;
     background-color: white;
 }
 
-
-
-
 /*Players-Area*/
 #players-area{
     display: flex;
@@ -129,6 +125,6 @@ footer {
     text-align: center;
     margin-top: 1em;
     padding: 10px 0;
-    position relative;
+    position: relative;
     bottom: 0;
 }
