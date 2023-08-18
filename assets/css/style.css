@@ -16,6 +16,7 @@
 
 body {
     font-family: var(--primary-font-family);
+    text-align;
 }
 
 header {
@@ -45,11 +46,28 @@ main {
     border-radius: 50%;
     background-color: white;
 }
+
+
+
+
+/*Players-Area*/
 #players-area{
     display: flex;
     justify-content:space-evenly;
+    text-align: center;
 }
-h2 { text-align: center;}
+#p1-turn, #p2-turn{
+    height: 10vw;
+    width: 10vw;
+    border-radius: 50%;
+}
+.player-turn-text{
+    height: 2rem;
+}
+.player-turn{
+    display: flex;
+    justify-content: center;
+    }
 
 footer {
     text-align: center;
