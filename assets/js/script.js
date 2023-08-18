@@ -8,16 +8,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const readRulesBtn = document.getElementById("read-rules-btn");
   const theGame = document.querySelector(".the-game");
   const mainMenu = document.querySelector(".main-menu");
+  const rulesModal = document.getElementById("rules-modal");
   
   openGameBtn.addEventListener("click", () => {
     theGame.style.display = "block";
     mainMenu.style.display = "none";
+});
 
-    readRulesBtn.addEventListener("click", () => {
+readRulesBtn.addEventListener("click", () => {
         rulesModal.style.display = "flex";
         theGame.style.display = "none";
       });
-  });
+let span = document.getElementsByClassName("close")[0];
+span.onclick = function () {
+  rulesModal.style.display = "none";
+};
 });
 
 function runGame() {}
