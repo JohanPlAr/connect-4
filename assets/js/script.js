@@ -116,7 +116,23 @@ function addCoin(playerColumn, color) {
     checkWinner(color);
   }
 
-  
+/*Loops through all the gameArrays and checks if each element is 
+equal to the color parameter (red/yellow). If a match is found, it changes the background 
+color of the corresponding HTML element and adds the class "active" to it.
+It displays the players chosen position.
+*/
+function displayCoins(color) {
+    for (let i = 0; i < gameArrays.length; i++) {
+      for (let j = 0; j < gameArrays[i].length; j++) {
+        if (gameArrays[i][j] == color) {
+          document.getElementById(
+            `x${j + 1}, y${i + 1}`
+            ).style.backgroundColor = color;
+          document.getElementById(`x${j + 1}, y${i + 1}`).classList.add("active");
+        }
+      }
+    }
+  }  
 
 function checkWinner(color){}
 }
