@@ -59,7 +59,7 @@ button:hover{cursor:pointer;
     margin-top: 2em;
 }
 
-#rules-modal {
+.modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     justify-content: center;
