@@ -123,10 +123,11 @@ function addCoin(playerColumn, color) {
     checkWinner(color);
   }
 
-/*Loops through all the gameArrays and checks if each element is 
-equal to the color parameter (red/yellow). If a match is found, it changes the background 
-color of the corresponding HTML element and adds the class "active" to it.
-It displays the players chosen position.
+/*Displays the players chosen position. Loops through all the gameArrays 
+and checks if each element is equal to the color parameter (red/yellow). 
+If a match is found, it changes the background color of the corresponding 
+HTML element and adds the class "active" to it.
+
 */
 function displayCoins(color) {
     for (let i = 0; i < gameArrays.length; i++) {
@@ -140,14 +141,34 @@ function displayCoins(color) {
       }
     }
   }
-
+//Checks all result variations. Draw, Horizantal, Vertical and Diagonal.
 function checkWinner(color){
+    //Draw, will occur when the whole board is filled.
+    //Resets turn to 0 and runs the afterWinMenu function.
     if (turn > 41) {
         turn = 0;
         let draw = true;
         afterWinMenu(color, draw);
       }
+      //Iterates through all gameArray values.
+      for (let i = 0; i < gameArrays.length; i++) {
+        for (let j = 0; j < gameArrays[i].length; j++){
+      //Checks Horizontal win
+      if (i < 4 &&
+        gameArrays[i][j] == color &&
+        gameArrays[i + 1][j] == color &&
+        gameArrays[i + 2][j] == color &&
+        gameArrays[i + 3][j] == color
+      ) {
+        console.log(`${color} wins`);
+        gameScore(color);
+        afterWinMenu(color);
+      }
+    }
 }
-function afterWinMenu(){}
+}
+function gameScore(){}
+function afterWinMenu(){
+    }
 }
 
