@@ -164,7 +164,54 @@ function checkWinner(color){
         gameScore(color);
         afterWinMenu(color);
       }
-    }
+        //Checks ve win
+      if (
+        i > 2 &&
+        gameArrays[i][j] == color &&
+        gameArrays[i - 1][j - 1] == color &&
+        gameArrays[i - 2][j - 2] == color &&
+        gameArrays[i - 3][j - 3] == color
+      ) {
+        console.log(`${color} wins`);
+        gameScore(color);
+        afterWinMenu(color);
+      }
+      //Checks vertical win 
+      if (
+        gameArrays[i][j] == color &&
+        gameArrays[i][j + 1] == color &&
+        gameArrays[i][j + 2] == color &&
+        gameArrays[i][j + 3] == color
+      ) {
+        console.log(`${color} wins`);
+        gameScore(color);
+        afterWinMenu(color);
+      }
+      //Checks Diagonal win ⇗
+      if (
+        i < 4 &&
+        gameArrays[i][j] == color &&
+        gameArrays[i + 1][j + 1] == color &&
+        gameArrays[i + 2][j + 2] == color &&
+        gameArrays[i + 3][j + 3] == color
+      ) {
+        console.log(`${color} wins`);
+        gameScore(color);
+        afterWinMenu(color);
+      }
+      //Checks Diagonal win ⇖
+      if (
+        i > 2 &&
+        gameArrays[i][j] == color &&
+        gameArrays[i - 1][j + 1] == color &&
+        gameArrays[i - 2][j + 2] == color &&
+        gameArrays[i - 3][j + 3] == color
+      ) {
+        console.log(`${color} wins`);
+        gameScore(color);
+        afterWinMenu(color);
+      }
+}
 }
 }
 function gameScore(){}
