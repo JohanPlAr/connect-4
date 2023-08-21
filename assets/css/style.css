@@ -101,13 +101,13 @@ button:hover{cursor:pointer;
     background-color: white;
 }
 #in-game-btns {
-    display: flex;
+   display:flex;
 }
 .game-btn{
     padding: 10px 15px;
    margin:5vw 5vw 3vw 5vw;
       }
-}
+
 /*Players-Area*/
 #players-area{
     display: flex;
