@@ -225,8 +225,20 @@ function gameScore(color) {
       document.getElementById("p2-score").innerText = `Score ${p2Score}`;
     }
     console.log(p1Score, p2Score);
-  
-// Add event listeners to game buttons
+}
+/*Resets the game board, nulls gameArrays, removes "active" status from 
+all boxes and sets the background color to white.*/  
+function resetBoard() {
+    turn = 0;
+    let boxes = document.querySelectorAll(".game-box");
+    boxes.forEach(function (box) {
+      box.classList.remove("active");
+      box.style.backgroundColor = "white";
+    });
+    gameArrays = [[], [], [], [], [], [], []];
+  }
+
+//Add event listeners to game buttons
     let resetBoardBtn = document.getElementById("reset-board-btn");
     resetBoardBtn.addEventListener("click", resetBoard);
     let resetScoreBtn = document.getElementById("reset-score-btn");
@@ -234,7 +246,8 @@ function gameScore(color) {
     let quitGameBtn = document.getElementsByClassName("quit-game-btn");
     quitGameBtn[0].addEventListener("click", quitGame);
     quitGameBtn[1].addEventListener("click", quitGame);
-}
+
+
 function afterWinMenu(){
     }
 }
