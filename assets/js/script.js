@@ -214,7 +214,27 @@ function checkWinner(color){
 }
 }
 }
-function gameScore(){}
+//Adds Score after a win and displays it in the score area.
+function gameScore(color) {
+    if (color == "red") {
+      p1Score += 1;
+      document.getElementById("p1-score").innerText = `Score ${p1Score}`;
+    }
+    if (color == "yellow") {
+      p2Score += 1;
+      document.getElementById("p2-score").innerText = `Score ${p2Score}`;
+    }
+    console.log(p1Score, p2Score);
+  
+// Add event listeners to game buttons
+    let resetBoardBtn = document.getElementById("reset-board-btn");
+    resetBoardBtn.addEventListener("click", resetBoard);
+    let resetScoreBtn = document.getElementById("reset-score-btn");
+    resetScoreBtn.addEventListener("click", resetScore);
+    let quitGameBtn = document.getElementsByClassName("quit-game-btn");
+    quitGameBtn[0].addEventListener("click", quitGame);
+    quitGameBtn[1].addEventListener("click", quitGame);
+}
 function afterWinMenu(){
     }
 }
