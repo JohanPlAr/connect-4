@@ -75,7 +75,11 @@ When the mouse leaves the column, the highlighting is removed.
           });
         });
       }
-      
+/* Adds event listeners to the columns and listens for click. When a column is 
+clicked the function will console.log the column and turn number. Based on 
+turn either red or yellow will be used as argument when calling the addCoin
+function. 
+*/
       function choseColumn() {
         let playerColumn = 0;
         for (let i = 0; i < gameColumns.length; i++)
@@ -102,8 +106,11 @@ When the mouse leaves the column, the highlighting is removed.
       choseColumn()
 
 
-/*Adds a value of either "red" or "yellow" (color) to the gameArray which represents the  
- column clicked by the player.*/
+/*Pushes a value of either "red" or "yellow" (color) to the gameArray which represents the  
+ column clicked by the player. Result should look accordingly:
+ gameArrays = [['red','yellow'], ['yellow'], ['red','red'], [], [], [], []]
+ 
+ */
  //Runs the displayCoins and checkWinner functions.
 
 function addCoin(playerColumn, color) {
@@ -132,8 +139,15 @@ function displayCoins(color) {
         }
       }
     }
-  }  
+  }
 
-function checkWinner(color){}
+function checkWinner(color){
+    if (turn > 41) {
+        turn = 0;
+        let draw = true;
+        afterWinMenu(color, draw);
+      }
+}
+function afterWinMenu(){}
 }
 
