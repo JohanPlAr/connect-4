@@ -39,7 +39,7 @@ function runGame() {
     let p1Score = 0;
     let p2Score = 0;
     document.getElementById("p1-turn").style.backgroundColor = "red";
-    document.getElementById("p1-turn-text").innerText = "Next Play";
+    document.getElementsByClassName("player-turn-text")[0].innerText = "Next Play";
 
 
 /*When the mouse hovers over a column, the function selects all the boxes 
@@ -91,14 +91,14 @@ function.
               addCoin(playerColumn, "red");
               document.getElementById("p1-turn").style.backgroundColor = "white";
               document.getElementById("p2-turn").style.backgroundColor = "yellow";
-              document.getElementById("p2-turn-text").innerText = "Next Play";
-              document.getElementById("p1-turn-text").innerText = "";
+              document.getElementsByClassName("player-turn-text")[1].innerText = "Next Play";
+              document.getElementsByClassName("player-turn-text")[0].innerText = "";
             } else {
               addCoin(playerColumn, "yellow");
               document.getElementById("p2-turn").style.backgroundColor = "white";
               document.getElementById("p1-turn").style.backgroundColor = "red";
-              document.getElementById("p1-turn-text").innerText = "Next Play";
-              document.getElementById("p2-turn-text").innerText = "";
+              document.getElementsByClassName("player-turn-text")[0].innerText = "Next Play";
+              document.getElementsByClassName("player-turn-text")[1].innerText = "";
             }
           });
       }
@@ -226,6 +226,15 @@ function gameScore(color) {
     }
     console.log(p1Score, p2Score);
 }
+//Resets the score to 0 and displays it to score area
+function resetScore() {
+    let p1Score = 0;
+    let p2Score = 0;
+    document.getElementById("p1-score").innerText = `Score ${p1Score}`;
+    document.getElementById("p2-score").innerText = `Score ${p2Score}`;
+  }
+
+
 /*Resets the game board, nulls gameArrays, removes "active" status from 
 all boxes and sets the background color to white.*/  
 function resetBoard() {
