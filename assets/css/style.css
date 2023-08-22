@@ -124,6 +124,10 @@ ul li {
     padding: 10px;
 }
 
+.close:hover {
+    cursor: pointer
+}
+
 #after-win-menu {
     text-align: start;
     margin-top: 15em;
