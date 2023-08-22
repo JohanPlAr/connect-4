@@ -246,10 +246,12 @@ all boxes and sets the background color to white.*/
     gameArrays = [[], [], [], [], [], [], []];
   }
 
+/*Displays afterWinModal and presents draw or winner based on values 
+passed on by checkWinner()*/
   function afterWinMenu(color, draw) {
     const afterWinModal = document.getElementsByClassName("modal")[1];
     resetBoard();
-    if (turn > 41) {
+    if (draw) {
       turn = 0;
     }
     afterWinModal.style.display = "flex";
@@ -266,15 +268,23 @@ all boxes and sets the background color to white.*/
     newRound();
   }
 
-  function newRound(){}
-  
+function newRound() {
+    let newRoundButton = document.getElementById("new-round-button");
+    newRoundButton.onclick = function () {
+      afterWinModal.style.display = "none";
+    };
+  }
+  function quitGame() {
+    window.location.reload();
+  }
+
 
   //Add event listeners to game buttons
-  let resetBoardBtn = document.getElementById("reset-board-btn");
+  const resetBoardBtn = document.getElementById("reset-board-btn");
   resetBoardBtn.addEventListener("click", resetBoard);
-  let resetScoreBtn = document.getElementById("reset-score-btn");
+  const resetScoreBtn = document.getElementById("reset-score-btn");
   resetScoreBtn.addEventListener("click", resetScore);
-  let quitGameBtn = document.getElementsByClassName("quit-game-btn");
+  const quitGameBtn = document.getElementsByClassName("quit-game-btn");
   quitGameBtn[0].addEventListener("click", quitGame);
   quitGameBtn[1].addEventListener("click", quitGame);
 
