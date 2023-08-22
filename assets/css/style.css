@@ -76,11 +76,24 @@ button:hover{cursor:pointer;
   }
 
   #rules-box{
-    margin-top:5em;
+    text-align: start;
+    margin:5em 0;
     width:80vw;
     height:fit-content;
     background-color: white;
     border-radius: 10px;
+}
+
+ul{padding:2em 2em 0;
+    font-size: larger;
+ }
+ ul li{
+  margin-bottom: 1em;
+ }
+ .close {width:100%;
+    font-size: 200%;
+    font-weight: 400;
+    padding: 10px;
 }
 
 .the-game {
