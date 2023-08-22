@@ -1,52 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=IBM+Plex+Serif&family=Zen+Kaku+Gothic+Antique&display=swap');
 
+/*Set colors and fonts in root to enable easier redisgn*/
 :root {
     --primary-font-family: 'Chakra Petch', sans-serif;
     --secondary-font-family: 'IBM Plex Serif', serif;
     --primary-color: bisque;
     --secondary-color: coral;
     --tertiary-color: brown;
-    
+
 }
 
+/*Remove browser default settings*/
 * {
     margin: 0;
     padding: 0;
     border: 0;
     box-sizing: border-box;
-  }
+}
+
 
 body {
-    display:flex;
+    display: flex;
     flex-direction: column;
     font-family: var(--primary-font-family);
     text-align: center;
+    /*Ensure the body covers the viewport*/
     min-height: 100vh;
-    }
+
+}
 
 header {
     text-transform: uppercase;
     width: 100%;
     background-color: var(--primary-color);
-      }
+}
 
-      h2 {text-align: center;}
-      
+h2 {
+    text-align: center;
+}
+
 main {
-    flex:1 0 auto;
-    display:flex;
+    /*flex item will grow to fill all available space, 
+    will not shrink, and will be sized based on its 
+    content.*/
+    flex: 1 0 auto;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/*Settings for all buttons*/
 button {
     border-radius: 10px;
     border: 4px solid var(--secondary-color);
     font-family: var(--primary-font-family);
 }
-button:hover{cursor:pointer;
+
+/*Sets the color on buttons when mouse over*/
+button:hover {
+    cursor: pointer;
     background-color: var(--primary-color);
-    border-color: var(--tertiary-color)}
+    border-color: var(--tertiary-color)
+}
 
 /*Main-menu*/
 .main-menu {
@@ -54,143 +69,175 @@ button:hover{cursor:pointer;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    }
-.main-menu-btn {  
+}
+
+.main-menu-btn {
     width: 20em;
-    height: 5em; 
+    height: 5em;
     margin-top: 2em;
 }
 
+/*Modal*/
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
+    /* Hidden by default */
+    display: none;
+    /* Stay in place */
+    position: fixed;
     justify-content: center;
-    z-index: 1; /* Sit on top */
+    /* Sit on top */
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
-  }
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Black w/ opacity */
+}
 
-  #rules-box{
+#rules-box {
     text-align: start;
-    margin:5em 0;
-    width:80vw;
-    height:fit-content;
+    margin: 5em 0;
+    width: 80vw;
+    height: fit-content;
     background-color: white;
     border-radius: 10px;
 }
 
-ul{padding:2em 2em 0;
+ul {
+    padding: 2em 2em 0;
     font-size: larger;
- }
- ul li{
-  margin-bottom: 1em;
- }
- .close {width:100%;
+}
+
+ul li {
+    margin-bottom: 1em;
+}
+
+.close {
     font-size: 200%;
     font-weight: 400;
     padding: 10px;
 }
 
+#after-win-menu {
+    text-align: start;
+    margin-top: 15em;
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+/*Game-area*/
 .the-game {
     display: none;
- 
-  }
+
+}
 
 /*Game-area*/
 .game-area {
-    display:flex;
+    display: flex;
     height: 74vw;
     width: 98 vw;
     border-radius: 15px;
     background-color: blue;
 }
-.game-box{
+
+.game-box {
     margin: 2vw 2vw 0 2vw;
     height: 10vw;
     width: 10vw;
     border-radius: 50%;
     background-color: white;
 }
+
+/*Flex container for in game buttons*/
 #in-game-btns {
-   display:flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
-.game-btn{
+
+.game-btn {
     padding: 10px 15px;
-   margin:5vw 5vw 3vw 5vw;
-      }
+    margin: 5vw 5vw 3vw 5vw;
+}
 
 /*Players-Area*/
-#players-area{
+#players-area {
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     text-align: center;
 }
-#p1-turn, #p2-turn{
+
+/*Styles the circle under the Next Play*/
+#p1-turn,
+#p2-turn {
     height: 10vw;
     width: 10vw;
     border-radius: 50%;
 }
-.player-turn-text{
+
+.player-turn-text {
     height: 2rem;
 }
-.player-turn{
+
+.player-turn {
     display: flex;
     justify-content: center;
+}
+
+
+/*Big screen media query*/
+@media only screen and (min-width: 665px) {
+    .game-area {
+        height: 490px;
+        width: 630px;
+
     }
 
-#after-win-menu{
-        text-align: start;
-        margin-top: 15em;
-        width:fit-content;
-        height:fit-content;
-        background-color: white;
-        text-transform: uppercase;
-        border-radius: 10px;
-      }
+    .game-box {
+        margin: 10px 10px 0 10px;
+        height: 70px;
+        width: 70px;
+    }
 
-      @media only screen and (min-width: 665px) {
-        .game-area {
-            height: 490px;
-            width: 630px;
-         
-        }
-        .game-box {
-            margin:10px 10px 0 10px;
-            height: 70px;
-            width: 70px;
-                }
-        #in-game-btns, #players-area{
-                width: 630px;
-                } 
-          #p1-turn, #p2-turn{
-            height: 70px;
-            width: 70px;
-          }
-          .game-btn {
-            margin:  50px;
+    #in-game-btns,
+    #players-area {
+        width: 630px;
+    }
 
-          #after-win-menu{
-            width:350px;
-            height:fit-content;
+    #p1-turn,
+    #p2-turn {
+        height: 70px;
+        width: 70px;
+    }
+
+    .game-btn {
+        margin: 50px;
+
+        #after-win-menu {
+            width: 350px;
+            height: fit-content;
             border-radius: 10px;
-          }
-          #rules-box{
-            width:630px;
-      }
+        }
 
-    }    
+        #rules-box {
+            width: 630px;
+        }
 
-/*Footer*/
-footer {
-    text-align: center;
-    margin-top: 1em;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-}
+    }
+
+    /*Footer*/
+    footer {
+        text-align: center;
+        margin-top: 1em;
+        padding: 10px 0;
+        position: relative;
+        bottom: 0;
+    }
