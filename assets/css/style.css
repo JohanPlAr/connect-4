@@ -29,7 +29,9 @@ header {
     width: 100%;
     background-color: var(--primary-color);
       }
-    
+
+      h2 {text-align: center;}
+      
 main {
     flex:1 0 auto;
     display:flex;
@@ -126,6 +128,16 @@ button:hover{cursor:pointer;
     display: flex;
     justify-content: center;
     }
+
+#after-win-menu{
+        margin-top:15em;
+        width:fit-content;
+        height:fit-content;
+        background-color: white;
+        text-transform: uppercase;
+        border-radius: 10px;
+      }
+
 
 /*Footer*/
 footer {
