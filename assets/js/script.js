@@ -21,8 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
     rulesModal.style.display = "flex";
     theGame.style.display = "none";
   });
-  let span = document.getElementsByClassName("close")[0];
-  span.onclick = function () {
+  const rulesSpan = document.getElementsByClassName("close")[0];
+  rulesSpan.onclick = function () {
     rulesModal.style.display = "none";
   };
   runGame();
@@ -37,6 +37,7 @@ function runGame() {
   let gameArrays = [[], [], [], [], [], [], []];
   let turn = 0;
   const gameColumns = document.getElementsByClassName("game-column");
+  const afterWinModal = document.getElementsByClassName("modal")[1];
   let p1Score = 0;
   let p2Score = 0;
   document.getElementById("p1-turn").style.backgroundColor = "red";
@@ -237,7 +238,6 @@ HTML element and adds the class "active" to it.
   /*Resets the game board, nulls gameArrays, removes "active" status from 
 all boxes and sets the background color to white.*/
   function resetBoard() {
-    turn = 0;
     let boxes = document.querySelectorAll(".game-box");
     boxes.forEach(function (box) {
       box.classList.remove("active");
@@ -249,14 +249,13 @@ all boxes and sets the background color to white.*/
 /*Displays afterWinModal and presents draw or winner based on values 
 passed on by checkWinner()*/
   function afterWinMenu(color, draw) {
-    const afterWinModal = document.getElementsByClassName("modal")[1];
     resetBoard();
     if (draw) {
       turn = 0;
     }
     afterWinModal.style.display = "flex";
-    let span = document.getElementsByClassName("close")[1];
-    span.onclick = function () {
+    const afterWinSpan = document.getElementsByClassName("close")[1];
+    afterWinSpan.onclick = function () {
       afterWinModal.style.display = "none";
     };
 
@@ -267,9 +266,9 @@ passed on by checkWinner()*/
     }
     newRound();
   }
-
+//Add 
 function newRound() {
-    let newRoundButton = document.getElementById("new-round-button");
+    const newRoundButton = document.getElementById("new-round-button");
     newRoundButton.onclick = function () {
       afterWinModal.style.display = "none";
     };
@@ -287,6 +286,7 @@ function newRound() {
   const quitGameBtn = document.getElementsByClassName("quit-game-btn");
   quitGameBtn[0].addEventListener("click", quitGame);
   quitGameBtn[1].addEventListener("click", quitGame);
+
 
 
 }
