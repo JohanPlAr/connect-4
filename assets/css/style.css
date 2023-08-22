@@ -98,6 +98,7 @@ ul{padding:2em 2em 0;
 
 .the-game {
     display: none;
+ 
   }
 
 /*Game-area*/
@@ -117,6 +118,7 @@ ul{padding:2em 2em 0;
 }
 #in-game-btns {
    display:flex;
+  justify-content: center;
 }
 .game-btn{
     padding: 10px 15px;
@@ -143,8 +145,8 @@ ul{padding:2em 2em 0;
     }
 
 #after-win-menu{
-    text-align: start;
-        margin-top:15em;
+        text-align: start;
+        margin-top: 15em;
         width:fit-content;
         height:fit-content;
         background-color: white;
@@ -152,6 +154,37 @@ ul{padding:2em 2em 0;
         border-radius: 10px;
       }
 
+      @media only screen and (min-width: 665px) {
+        .game-area {
+            height: 490px;
+            width: 630px;
+         
+        }
+        .game-box {
+            margin:10px 10px 0 10px;
+            height: 70px;
+            width: 70px;
+                }
+        #in-game-btns, #players-area{
+                width: 630px;
+                } 
+          #p1-turn, #p2-turn{
+            height: 70px;
+            width: 70px;
+          }
+          .game-btn {
+            margin:  50px;
+
+          #after-win-menu{
+            width:350px;
+            height:fit-content;
+            border-radius: 10px;
+          }
+          #rules-box{
+            width:630px;
+      }
+
+    }    
 
 /*Footer*/
 footer {
