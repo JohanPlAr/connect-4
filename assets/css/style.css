@@ -143,6 +143,7 @@ ul{padding:2em 2em 0;
     }
 
 #after-win-menu{
+    text-align: start;
         margin-top:15em;
         width:fit-content;
         height:fit-content;
