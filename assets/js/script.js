@@ -40,7 +40,8 @@ function runGame() {
   const afterWinModal = document.getElementsByClassName("modal")[1];
   let p1Score = 0;
   let p2Score = 0;
-  document.getElementById("p1-turn").style.backgroundColor = "red";
+  let nextPlayer1 = document.getElementById("p1-turn");
+  let nextPlayer2 = document.getElementById("p2-turn");
   document.getElementsByClassName("player-turn-text")[0].innerText =
     "Next Play";
 
@@ -87,25 +88,25 @@ full.
 */
   function choseColumn() {
     let playerColumn = 0;
-
+  
     for (let i = 0; i < gameColumns.length; i++)
       gameColumns[i].addEventListener("click", function () {
         playerColumn = i;
-        console.log(playerColumn);
-        console.log(turn);
+        console.log(`Chosen Column: ${playerColumn}`);
+        console.log(`Turn: ${turn}`);
         if (gameArrays[playerColumn].length < 6) {
-          if (turn % 2 === 0) {
+          if (nextPlayer1.style.backgroundColor == "red") {
             addCoin(playerColumn, "red");
-            document.getElementById("p1-turn").style.backgroundColor = "white";
-            document.getElementById("p2-turn").style.backgroundColor = "yellow";
+            nextPlayer1.style.backgroundColor = "white";
+            nextPlayer2.style.backgroundColor = "yellow";
             document.getElementsByClassName("player-turn-text")[1].innerText =
               "Next Play";
             document.getElementsByClassName("player-turn-text")[0].innerText =
               "";
           } else {
             addCoin(playerColumn, "yellow");
-            document.getElementById("p2-turn").style.backgroundColor = "white";
-            document.getElementById("p1-turn").style.backgroundColor = "red";
+            nextPlayer2.style.backgroundColor = "white";
+            nextPlayer1.style.backgroundColor = "red";
             document.getElementsByClassName("player-turn-text")[0].innerText =
               "Next Play";
             document.getElementsByClassName("player-turn-text")[1].innerText =
@@ -126,11 +127,14 @@ full.
 
   function addCoin(playerColumn, color) {
     gameArrays[playerColumn].push(color);
-    turn += 1;
     displayCoins(color);
     checkWinner(color);
     console.log(gameArrays[playerColumn]);
-  }
+    turn = 0;
+    for (let i = 0; i < gameArrays.length; i++) {
+        turn += gameArrays[i].length;
+    }
+      }
 
   /*Displays the players chosen position. Loops through all the gameArrays 
 and checks if each element is equal to the color parameter (red/yellow). 
@@ -156,9 +160,9 @@ HTML element and adds the class "active" to it.
   function checkWinner(color) {
     //Draw, will occur when the whole board is filled.
     //Resets turn to 0 and runs the afterWinMenu function.
-    if (turn > 41) {
-      turn = 0;
+    if (turn > 40) {
       let draw = true;
+      console.log("It's a draw");
       afterWinMenu(color, draw);
     }
     //Iterates through all gameArray values.
@@ -243,7 +247,7 @@ all boxes and sets the background color to white.*/
       box.classList.remove("active");
       box.style.backgroundColor = "white";
     });
-    gameArrays = [[], [], [], [], [], [], []];
+       gameArrays = [[], [], [], [], [], [], []];
   }
 
 /*Displays afterWinModal and presents draw or winner based on values 
@@ -251,8 +255,7 @@ passed on by checkWinner()*/
   function afterWinMenu(color, draw) {
     resetBoard();
     if (draw) {
-      turn = 0;
-    }
+      }
     afterWinModal.style.display = "flex";
     const afterWinSpan = document.getElementsByClassName("close")[1];
     afterWinSpan.onclick = function () {
