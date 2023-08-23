@@ -171,7 +171,6 @@ ul li {
 .game-btn {
     width: 20vw;
     height: 4em;
-    padding: 15px auto;
     margin: 5vw 5vw 3vw 5vw;
 }
 
@@ -236,6 +235,7 @@ ul li {
     .game-btn {
         margin: 50px;
         max-width: 15em;
+
     }
 
     #after-win-menu {
