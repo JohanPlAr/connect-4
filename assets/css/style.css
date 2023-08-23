@@ -164,11 +164,12 @@ ul li {
 /*Flex container for in game buttons*/
 #in-game-btns {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .game-btn {
-    padding: 10px 15px;
+    width: 20vw;
+    height: 5em;
     margin: 5vw 5vw 3vw 5vw;
 }
 
@@ -231,7 +232,6 @@ ul li {
     }
 
     #after-win-menu {
-        width: 350px;
         height: fit-content;
         border-radius: 10px;
     }
