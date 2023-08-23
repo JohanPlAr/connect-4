@@ -1,4 +1,4 @@
-![CONNECT 4](documentation/Connect-4-logo.png)
+![CONNECT 4](documentation/logo.png)
 
 ---
 
@@ -29,6 +29,10 @@ The site can be accessed by this [link](https://johanplar.github.io/connect-4/)
 
 ## Features
 
+- ### Logo Bar
+
+- #### Logo
+  ![Logo](documentation/main-menu.png)
 - ### Main Menu
 
 - #### Main Menu Buttons
@@ -58,15 +62,19 @@ The site can be accessed by this [link](https://johanplar.github.io/connect-4/)
 - #### Game Board
 
   - Seven columns and six rows shows the slots where the users can drop their game coins. Placed on top under the Logo.
+    ![Game Board Section](documentation/game-board.png)
 
-  ![Game Board Section](documentation/game-board.png)
+- #### Game Buttons area
+
+  - Contains three buttons which lets the user to Reset the Board, Reset the Score and Quit the Game.
+    ![Game Buttons Section](documentation/game-buttons.png)
 
 - #### Players Area
 
   - Shows which players turn is next controlled in the script.js file.
   - Shows the score between the players also controlled in the script.js.
 
-  ![Game Board Section](documentation/game-board.png)
+  ![Players Area Section](documentation/players-area.png)
 
   ***
 
@@ -100,46 +108,35 @@ The site can be accessed by this [link](https://johanplar.github.io/connect-4/)
 
 ![Color pallet](documentation/color-pallet.png)
 
-- Blue color was used as the main color of the website to represent the evening sky and the ocean.
+- Champagne/Bisque was used as the background color for the logo bar .
 
-- Light Blue Color was used as a contrast to the darker blue to resemble clear blue mid day sky.
+- Coral was used as a border color for the buttons.
 
-- Sandybrown is used as a contrast color and was picked from the setting sun present in the hero-image and used as font-color.
-
-- Limestone white was picked to represent the limestone house colors of Villa Solhem also present at the many Gotland beaches.
+- Blue/Yellow/Red was used as the game board colors to mimic the physical world original game of Connect 4.
 
 ### Typography
 
-![Main Font](documentation/primary-font.png)
+![Main Font](documentation/font.png)
 
-- Zen Kaku Gothic Antique was used as the main font and Logo text of the website in order to increase readability.
-
-![Accent Font](documentation/accent-font.png)
-
-- IBM Plex Serif was used to contrast headlines on cards from the main font to accentuate info cards.
+- Chakra Petch was chosen as the primary font for it's classic arcade game resemblence.
 
 ### Wireframes
 
-#### Mobile devices
+#### Main Menu
 
-- [Home Page. Mobile Screen](documentation/mobile-home-page.png)
-- [Gallery Page. Mobile Screen](documentation/mobile-gallery-page.png)
-- [Booking Page. Mobile Screen](documentation/mobile-booking-page.png)
-- [Thank You Page. Mobile Screen](documentation/mobile-thank-you-page.png)
+- [Main Menu.](documentation/main-menu-display.png)
 
-#### Tablets
+#### Rules
 
-- [Home Page. Tablet Screen](documentation/tablet_home_page.png)
-- [Gallery Page. Tablet Screen](documentation/tablet-gallery-page.png)
-- [Booking Page. Tablet Screen](documentation/tablet-booking-page.png)
-- [Thank You Page. Tablet Screen](documentation/tablet-thank-you-page.png)
+- [Home Page. Tablet Screen](documentation/rules-display.png)
 
-#### Desktop
+#### The Game
 
-- [Home Page. Desktop Screen](documentation/desktop-home-page.png)
-- [Gallery Page. Desktop Screen](documentation/desktop-gallery-page.png)
-- [Booking Page. Desktop Screen](documentation/desktop-booking-page.png)
-- [Thank You Page. Desktop Screen](documentation/desktop-thank-you-page.png)
+- [Home Page. Desktop Screen](documentation/the-game-display.png)
+
+#### Winner
+
+- [Home Page. Desktop Screen](documentation/winner-display.png)
 
 ---
 
@@ -183,30 +180,13 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 
   - Desktop Screens:
     ![Desktop 1920x1200](documentation/desktop-1920-1200.gif)
-    ![Desktop 1920x1080](documentation/desktop-1920-1080.gif)
-    ![Desktop 1680x1050](documentation/desktop-1680-1050.gif)
-    ![Desktop 1600x900](documentation/desktop-1600-900.gif)
-    ![Desktop 1440x900](documentation/desktop-1440-900.gif)
-    ![Desktop 1366x768](documentation/desktop-1366-768.gif)
-    ![Desktop 1024x800](documentation/desktop-1024-800.gif)
-    ![Desktop 1024x600](documentation/desktop-1024-600.gif)
 
   - Tablet Screens:
-    ![Tablet 1366x1024](documentation/tablet-1366-1024.gif)
-    ![Tablet 1024x768](documentation/tablet-1024-768.gif)
     ![Tablet 800x1280](documentation/tablet-800-1280.gif)
-    ![Tablet 768x1024](documentation/tablet-768-1024.gif)  
-    ![Tablet 600x960](documentation/tablet-600-960.gif)
 
   - Mobile Screens:
 
   ![Mobile 320x480](documentation/mobile-320-480.gif)
-  ![Mobile 320x568](documentation/mobile-320-568.gif)
-  ![Mobile 360x640](documentation/mobile-360-640.gif)
-  ![Mobile 375x667](documentation/mobile-375-667.gif)
-  ![Mobile 384x640](documentation/mobile-384-640.gif)
-  ![Mobile 411x731](documentation/mobile-411-731.gif)
-  ![Mobile 414x736](documentation/mobile-414-736.gif)
 
 - The functionality of the links in the website was checked as well by different users.
 
@@ -243,25 +223,20 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 
 ### Bugs
 
-1. Low contrast between primary font color Sandy Brow and blue background
+1. Game turn logic issue when turn counter was used to calculate draw.
 
-2. Loading time issue due to Hero and main images on home page and booking page unnecessarily heavy.
+2. The check winner algo had uneccessary combinations initially.
 
 - ##### Solved bugs
 
-  1.Background color was changed to a darker nuance.
+  1. Game turn logic was changed so that the turn was set by calculating the objects in the GameArray and for the chooseColumn to check the background color property of #p1-turn span.
 
-  2. Optimized images for better performance.
+  2. Check winner algo was reduced to cover only 5 options instead of previously 7.
 
   ***
 
 - ##### Unsolved bugs
   - None.
-- ##### Mistakes
-
-  - My early commits where not posted with standard wording and not covering all essential changes.
-
-  - I updated the hamburger symbol and menu with animations after I already recorded the gif screensaves for the Readme. Hence the gifs showing the page responsiveness does not have all the latest updatetes.
 
 ---
 
@@ -275,51 +250,17 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 
   ![Home Page HTML Validator](documentation/w3-validator-home-page.png)
 
-  #### Gallery Page
-
-  - No errors or warnings were found when passing through the official W3C validator.
-
-  ![Gallery Page HTML Validator](documentation/w3-validator-gallery-page.png)
-
-  #### Booking Page
-
-  - No errors or warnings were found when passing through the official W3C validator.
-
-  ![Contact Page HTML Validator](documentation/w3-validator-booking-page.png)
-
-  #### Thank You Page
-
-  - No errors or warnings were found when passing through the official W3C validator.
-
-  ![Response Page HTML Validator](documentation/w3-validator-thank-you-page.png)
-
 - ### CSS
 
-  No errors or warnings were found when passing through the official W3C (Jigsaw) validator except:
+  No errors or warnings were found when passing through the official W3C (Jigsaw) validator.
   ![CSS Validator](documentation/w3-validator-css.png)
-
-  - 8 warnings regarding the use of _:root variables_: "Due to their dynamic nature, CSS variables are currently not statically checked".
-
-  ![CSS Validator errors](documentation/w3-validator-css-warnings.png)
 
   - ### Accessibility and performance
     - Using lighthouse in devtools I confirmed that the website is performing well, accessible and colors and fonts chosen are readable.
 
   #### Home page
 
-  ![Home Page Lighthouse](documentation/lighthouse-home-page.png)
-
-  #### Gallery page
-
-  ![Gallery Page Lighthouse](documentation/lighthouse-gallery-page.png)
-
-  #### Contact page
-
-  ![Booking Page Lighthouse](documentation/lighthouse-booking-page.png)
-
-  #### Thank You page
-
-  ![Thank You Page Lighthouse](documentation/lighthouse-thank-you-page.png)
+  ![Home Page Lighthouse](documentation/lighthouse.png)
 
 ---
 
