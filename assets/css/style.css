@@ -148,7 +148,7 @@ ul li {
 .game-area {
     display: flex;
     height: 74vw;
-    width: 98 vw;
+    width: 98vw;
     border-radius: 15px;
     background-color: blue;
 }
@@ -224,24 +224,25 @@ ul li {
 
     .game-btn {
         margin: 50px;
-
-        #after-win-menu {
-            width: 350px;
-            height: fit-content;
-            border-radius: 10px;
-        }
-
-        #rules-box {
-            width: 630px;
-        }
-
     }
 
-    /*Footer*/
-    footer {
-        text-align: center;
-        margin-top: 1em;
-        padding: 10px 0;
-        position: relative;
-        bottom: 0;
+    #after-win-menu {
+        width: 350px;
+        height: fit-content;
+        border-radius: 10px;
     }
+
+    #rules-box {
+        width: 630px;
+    }
+
+}
+
+/*Footer*/
+footer {
+    text-align: center;
+    margin-top: 1em;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+}
