@@ -143,10 +143,10 @@ HTML element and adds the class "active" to it.
       for (let j = 0; j < gameArrays[i].length; j++) {
         if (gameArrays[i][j] == color) {
           document.getElementById(
-            `x${j + 1}, y${i + 1}`
+            `x${j + 1},y${i + 1}`
           ).style.backgroundColor = color;
           document
-            .getElementById(`x${j + 1}, y${i + 1}`)
+            .getElementById(`x${j + 1},y${i + 1}`)
             .classList.add("active");
         }
       }
