@@ -169,7 +169,8 @@ ul li {
 
 .game-btn {
     width: 20vw;
-    height: 5em;
+    height: 4em;
+    padding: 15px auto;
     margin: 5vw 5vw 3vw 5vw;
 }
 
