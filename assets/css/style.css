@@ -230,6 +230,7 @@ ul li {
 
     .game-btn {
         margin: 50px;
+        max-width: 15em;
     }
 
     #after-win-menu {
