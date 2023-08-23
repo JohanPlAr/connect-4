@@ -41,7 +41,10 @@ function runGame() {
   let p1Score = 0;
   let p2Score = 0;
   let nextPlayer1 = document.getElementById("p1-turn");
-  let nextPlayer2 = document.getElementById("p2-turn");
+  
+  let nextPlayer1Style = getComputedStyle(nextPlayer1);
+  let nextPlayer1Color = nextPlayer1Style.backgroundColor;
+  console.log(nextPlayer1Color);let nextPlayer2 = document.getElementById("p2-turn");
   document.getElementsByClassName("player-turn-text")[0].innerText =
     "Next Play";
 
@@ -60,7 +63,8 @@ When the mouse leaves the column, the highlighting is removed.
         let boxes = Array.from(column.querySelectorAll(".game-box"));
         boxes = boxes.filter((x) => !x.classList.contains("active"));
         console.log(boxes);
-        if (turn % 2 === 0) {
+        
+        if (nextPlayer1Color == "rgb(255, 0, 0)") {
           if (boxes.length > 0) {
             boxes.at(-1).style.backgroundColor = "red";
           }
@@ -88,16 +92,18 @@ full.
 */
   function choseColumn() {
     let playerColumn = 0;
-  
+
     for (let i = 0; i < gameColumns.length; i++)
       gameColumns[i].addEventListener("click", function () {
         playerColumn = i;
+      
         console.log(`Chosen Column: ${playerColumn}`);
         console.log(`Turn: ${turn}`);
         if (gameArrays[playerColumn].length < 6) {
-          if (nextPlayer1.style.backgroundColor == "red") {
+          if (nextPlayer1Color == "rgb(255, 0, 0)") {
             addCoin(playerColumn, "red");
             nextPlayer1.style.backgroundColor = "white";
+            nextPlayer1Color = "";
             nextPlayer2.style.backgroundColor = "yellow";
             document.getElementsByClassName("player-turn-text")[1].innerText =
               "Next Play";
@@ -106,6 +112,7 @@ full.
           } else {
             addCoin(playerColumn, "yellow");
             nextPlayer2.style.backgroundColor = "white";
+            nextPlayer1Color = "rgb(255, 0, 0)";
             nextPlayer1.style.backgroundColor = "red";
             document.getElementsByClassName("player-turn-text")[0].innerText =
               "Next Play";
