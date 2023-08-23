@@ -32,7 +32,7 @@ The site can be accessed by this [link](https://johanplar.github.io/connect-4/)
 - ### Logo Bar
 
 - #### Logo
-  ![Logo](documentation/main-menu.png)
+  ![Logo](documentation/logo.png)
 - ### Main Menu
 
 - #### Main Menu Buttons
@@ -115,7 +115,7 @@ The site can be accessed by this [link](https://johanplar.github.io/connect-4/)
 
 ### Color Scheme
 
-![Color pallet](documentation/color-pallet.png)
+![Color palette](documentation/color-palette.png)
 
 - Champagne/Bisque was used as the background color for the logo bar .
 
@@ -157,15 +157,15 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 
   - Chrome:
 
-  ![Chrome](documentation/browsers-chrome.gif)
+  ![Chrome](documentation/responsive-gif.gif)
 
   - FireFox:
 
-  ![FireFox](documentation/browsers-firefox.gif)
+  ![FireFox](documentation/responsive-gif.gif)
 
   - Edge:
 
-  ![Edge](documentation/browsers-edge.gif)
+  ![Edge](documentation/responsive-gif.gif)
 
 - The website was checked by devtools implemented in Edge and Chrome browsers.
 
@@ -173,62 +173,36 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 
   ![Main Page](documentation/responsiveness-main-page.gif)
 
-  - Gallery Page:
-
-  ![Gallery Page](documentation/responsiveness-gallery-page.gif)
-
-  - Booking Page:
-
-  ![Booking Page](documentation/responsiveness-booking-page.gif)
-
-  - Thank You Page:
-
-  ![Thank You Page](documentation/responsiveness-thank-you-page.gif)
-
 * The website was checked with [Responsive Website Design Tester](https://responsivedesignchecker.com/).
 
-  - Desktop Screens:
-    ![Desktop 1920x1200](documentation/desktop-1920-1200.gif)
+  - Desktop Screen:
+    ![Desktop 1920x1080](documentation/desktop-1920-1080.png)
 
-  - Tablet Screens:
-    ![Tablet 800x1280](documentation/tablet-800-1280.gif)
+  - Tablet Screen:
+    ![Tablet 768x1024](documentation/tablet-768-1024.png)
 
-  - Mobile Screens:
+  - Mobile Screen:
 
-  ![Mobile 320x480](documentation/mobile-320-480.gif)
+  ![Mobile 320x480](documentation/mobile-320-480.png)
 
 - The functionality of the links in the website was checked as well by different users.
 
 ### Manual testing
 
-| feature                            | action                                      | expected result                              | tested | passed | comments                                                                                                              |
-| ---------------------------------- | ------------------------------------------- | -------------------------------------------- | ------ | ------ | --------------------------------------------------------------------------------------------------------------------- |
-| Navbar                             |                                             |                                              |        |        |                                                                                                                       |
-| Home                               | Click on the "Home" link                    | The user is redirected to the main page      | Yes    | Yes    | -                                                                                                                     |
-| Gallery                            | Click on the "Gallery" link                 | The user is redirected to the gallery page   | Yes    | Yes    | -                                                                                                                     |
-| Contact                            | Click on the "Book!" link                   | The user is redirected to the booking page   | Yes    | Yes    | -                                                                                                                     |
-| Footer                             |                                             |                                              |        |        |                                                                                                                       |
-| Email icon in the footer           | Click on the Email icon                     | The user activates the mailto feature        | Yes    | Yes    | -                                                                                                                     |
-| Instagram icon in the footer       | Click on the Instagram icon                 | The user is redirected to the Instagram page | Yes    | Yes    | -                                                                                                                     |
-|                                    |
-| Facebook icon in the footer        | Click on the Facebook icon                  | The user is redirected to the Facebook page  | Yes    | Yes    | -                                                                                                                     |
-| Twitter icon in the footer         | Click on the Twitter icon                   | The user is redirected to the Twitter page   | Yes    | Yes    | -                                                                                                                     |
-| Home page                          |                                             |                                              |        |        |                                                                                                                       |
-| "Book Now!" button in Main section | Click on the "Book Now!" button             | The user is redirected to the booking page   | Yes    | Yes    | -                                                                                                                     |
-| Gallery page                       |                                             |                                              |        |        |                                                                                                                       |
-| Image in the gallery               | User hover the image                        | Image scales for better visibility           | Yes    | Yes    | -                                                                                                                     |
-| Bookig page                        |                                             |                                              |        |        |                                                                                                                       |
-| Arrival                            | Enter arrival date                          | The arrival date is entered                  | Yes    | Yes    | If user doesn't enter arrival date, the error message appears                                                         |
-| Departure                          | Enter arrival date                          | The departure date is entered                | Yes    | Yes    | If user doesn't enter departure date, the error message appears                                                       |
-| First name input                   | Enter the first name                        | The first name is entered                    | Yes    | Yes    | If user doesn't enter the first name, the error message appears                                                       |
-| Last name input                    | Enter the last name                         | The last name is entered                     | Yes    | Yes    | If user doesn't enter the last name, the error message appears                                                        |
-| Visitors                           | Enter number of visitors                    | Number of visitors is entered                | Yes    | Yes    | If uder does'nt enter number of visistors, the error message appears                                                  |
-| Email input                        | Enter the email                             | The email is entered                         | Yes    | Yes    | If user doesn't enter the email, the error message appears. If user enters not valid email, the error message appears |
-| Phone Number                       | Enter the phone number                      | The phone number is entered                  | Yes    | Yes    | If user doesn't enter the phone number, the error message appears                                                     |
-| "Reset" button                     | Click on the "Reset" button                 | The entered form values resets               | Yes    | Yes    | -                                                                                                                     |
-| "Submit" button                    | Click on the "Submit" button                | The user is redirected to the thank you page | Yes    | Yes    | -                                                                                                                     |
-| Thank you page                     |                                             |                                              |        |        |                                                                                                                       |
-| Response message                   | The user will presented a thank you message | The user is presented a thank you message    | Yes    | Yes    | -                                                                                                                     |
+| feature            | action                          | expected result                               | tested | passed | comments |
+| ------------------ | ------------------------------- | --------------------------------------------- | ------ | ------ | -------- |
+| Main Menu          |                                 |                                               |        |        |          |
+| Start Game         | Click on the Start Game Button  | The Modal is blocked and Game appear          | Yes    | Yes    | -        |
+| Rules              | Click on Rules Button           | The Rules list is displayed                   | Yes    | Yes    | -        |
+| The Game           |                                 |                                               |        |        |          |
+| Game Board         | Click on a column in the board  | Red or yellow coin placed at bottom of column | Yes    | Yes    | -        |
+| Reset Board Button | Click on the Reset Board Button | The board is cleared of all coins             | Yes    | Yes    | -        |
+| Reset Score Button | Click on the Reset Score Button | The scores are set to zero                    | Yes    | Yes    | -        |
+| Quit Game Button   | Click on the Quit Game Button   | Exits the Game and Opens the Main Menu        | Yes    | Yes    | -        |
+
+### JavaScript diagram
+
+-![Overview of script functions](documentation/function-diagram.png)
 
 ### Bugs
 
@@ -291,26 +265,19 @@ The live link can be found [here](https://johanplar.github.io/connect-4)
 In order to make a local copy of this project, you can clone it.
 In your IDE Terminal, type the following command to clone my repository:
 
-- `git clone https://github.com/johanplar/villa-solhem.git`
+- `git clone https://github.com/johanplar/connect-4.git`
 
-- Alternatively, if you use Gitpod, you can [click here](https://gitpod.io/#https://github.com/johanplar/villa-connect-4), which will start the Gitpod workspace for you.
+- Alternatively, if you use Gitpod, you can [click here](https://gitpod.io/#https://github.com/johanplar/connect-4), which will start the Gitpod workspace for you.
 
 ## Future improvements
 
 -
 - add custom 404 page;
 
-- #### Content
-
-  - Inspiration for the gallery [LogRocket Ibadehin Mojeed](https://blog.logrocket.com/responsive-image-gallery-css-flexbox/).
-
-  - Inspiration for the responsive hamburger navbar came from [Kevin Powell](https://www.youtube.com/user/KepowOb) on his YouTube channel.
-
 - #### Media
 
-  - [Hero image and Main Section image on homepage](Private photo: Johan Plym Arkert);
-
   - Google Fonts
+  - Favicon
 
 - #### Tools
 
