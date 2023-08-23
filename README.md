@@ -76,6 +76,15 @@ The site can be accessed by this [link](https://johanplar.github.io/connect-4/)
 
   ![Players Area Section](documentation/players-area.png)
 
+- #### After Win Menu
+
+  - Shows who won or if the game is a draw.
+
+  ![Players Area Section](documentation/after-win-menu.png)
+
+  - ##### After Win Menu buttons
+    - Allows the user to either continue in a new round or quit the game.
+
   ***
 
 - #### Footer
@@ -91,8 +100,8 @@ The site can be accessed by this [link](https://johanplar.github.io/connect-4/)
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) was used as the foundation of the site.
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/css) - was used to add the styles and layout of the site.
 - [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout) - was used to arrange items symetrically on the pages.
-- [CSS Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid) - was used to make "gallery" page responsive.
-- [CSS roots](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) was used to declaring global CSS variables and apply them throughout the project.
+- [CSS roots](https://developer.mozilla.org/en-US/docs/Web/CSS/:root) - was used to declaring global CSS variables and apply them throughout the project.
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript) - w as used to create the game logic, and to operate the users interaction with the page.
 - [Balsamiq](https://balsamiq.com/) was used to make wireframes for the website.
 - [Visual Studio Code](https://code.visualstudio.com/) was used as the main tool to write and edit code.
 - [Git](https://git-scm.com/) was used for the version control of the website.
@@ -225,13 +234,17 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 
 1. Game turn logic issue when turn counter was used to calculate draw.
 
-2. The check winner algo had uneccessary combinations initially.
+2. Game turn logic forced every new round to be started by player 1.
+
+3. The check winner algo had uneccessary combinations initially.
 
 - ##### Solved bugs
 
-  1. Game turn logic was changed so that the turn was set by calculating the objects in the GameArray and for the chooseColumn to check the background color property of #p1-turn span.
+  1. Game turn logic was changed so that the turn was set by calculating the objects in the GameArray.
 
-  2. Check winner algo was reduced to cover only 5 options instead of previously 7.
+  2. The chooseColumn was changed to check the background color property of #p1-turn span instead of odd or even turns.
+
+  3. Check winner algo was reduced to cover only 5 options instead of previously 7.
 
   ***
 
@@ -248,7 +261,7 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 
   - No errors or warnings were found when passing through the official W3C validator.
 
-  ![Home Page HTML Validator](documentation/w3-validator-home-page.png)
+  ![Home Page HTML Validator](documentation/w3-validator-html.png)
 
 - ### CSS
 
@@ -271,7 +284,7 @@ In order to confirm the correct functionality, responsiveness, and appearance:
   - From the source section drop-down menu, select the **Main** Branch, then click "Save".
   - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-The live link can be found [here](https://johanplar.github.io/villa-solhem)
+The live link can be found [here](https://johanplar.github.io/connect-4)
 
 ## Local Deployment
 
@@ -280,14 +293,11 @@ In your IDE Terminal, type the following command to clone my repository:
 
 - `git clone https://github.com/johanplar/villa-solhem.git`
 
-- Alternatively, if you use Gitpod, you can [click here](https://gitpod.io/#https://github.com/johanplar/villa-solhem), which will start the Gitpod workspace for you.
+- Alternatively, if you use Gitpod, you can [click here](https://gitpod.io/#https://github.com/johanplar/villa-connect-4), which will start the Gitpod workspace for you.
 
 ## Future improvements
 
-- image carousel showing photos of the different rooms of the house to rent.
-- improve the quality of the commit messages. I am aware that I missed to point out some changes that along the way that could be useful.
-- add function to check availability straight away before user sends the filled input form.
-- add price-information.
+-
 - add custom 404 page;
 
 - #### Content
