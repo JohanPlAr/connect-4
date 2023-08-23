@@ -145,6 +145,7 @@ ul li {
 }
 
 /*Game-area*/
+
 .game-area {
     display: flex;
     height: 74vw;
@@ -172,6 +173,10 @@ ul li {
     height: 4em;
     padding: 15px auto;
     margin: 5vw 5vw 3vw 5vw;
+}
+
+.game-column:hover {
+    cursor: pointer;
 }
 
 /*Players-Area*/
