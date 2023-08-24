@@ -17,15 +17,15 @@ The site can be accessed by this [link](https://johanplar.github.io/connect-4/)
 
 - As a First Time Visitor, I want to easily understand the main purpose of the site, so I can learn more about the game application.
 - As a First Time Visitor, I want to be able to easily navigate through the website, so I can find the content.
-- As a First Time Visitor, I want to quickly acces the game.
+- As a First Time Visitor, I want to quickly acces the game so I can start playing.
 
 ### Returning Visitor Goals:
 
-- As a Returning Visitor, I want to continue to play and set higher scores against my opponent.
+- As a Returning Visitor, I want to continue to play and so I can set higher scores against my opponent.
 
 ### Frequent Visitor Goals:
 
-- I want to become a seasoned CONNECT 4 master.
+- As i Frequent Visitor I want to continue practicing so I'll become a seasoned CONNECT 4 master.
 
 ## Features
 
@@ -47,6 +47,11 @@ The site can be accessed by this [link](https://johanplar.github.io/connect-4/)
 - ##### Rules Button
 
   - By clicking the Rules button the user will access CONNECT 4- list of rules placed on top of the main menu modal. A span with a closing x is being used to allow the user to return to the Main Menu
+
+- ###### Rules Modal
+
+  - Displays The Connect 4 Rules list which explains the Game. The X-span in the top left corner closes the Modal and the Main Menu will reappear.
+    ![Rules List](documentation/rules.png)
 
   ***
 
@@ -251,7 +256,7 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 ## Deployment
 
 - The site was deployed to GitHub pages. The steps to deploy are as follows:
-  - In the [GitHub repository](https://github.com/joahnplar/connect-4), navigate to the Settings tab
+  - In the [GitHub repository](https://github.com/joahnplar/connect-4), navigate to the Settings tab and then choose pages in the left panel.
   - From the source section drop-down menu, select the **Main** Branch, then click "Save".
   - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
@@ -281,6 +286,7 @@ In your IDE Terminal, type the following command to clone my repository:
 - [cooler](https://coolors.co/) was used to create the color palette.
 - [mockupGen](https://websitemockupgenerator.com/) was used for responsive mockup png.
 - [image optimizer](http://www.imageoptimizer.net/) was used to resize images.
+- [Miro](miro.com for flowchart
 
 ## Acknowledgments
 
