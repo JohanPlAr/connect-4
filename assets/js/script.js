@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const theGame = document.querySelector(".the-game");
   const mainMenu = document.querySelector(".main-menu");
   const rulesModal = document.getElementsByClassName("modal")[0];
- 
+
   openGameBtn.addEventListener("click", () => {
     theGame.style.display = "block";
     mainMenu.style.display = "none";
@@ -41,26 +41,24 @@ function runGame() {
   let p1Score = 0;
   let p2Score = 0;
   let nextPlayer1 = document.getElementById("p1-turn");
-  
+  let nextPlayer2 = document.getElementById("p2-turn");
   let nextPlayer1Style = getComputedStyle(nextPlayer1);
   let nextPlayer1Color = nextPlayer1Style.backgroundColor;
   document.getElementsByClassName("player-turn-text")[0].innerText =
     "Next Play";
 
-  /*When the mouse hovers over a column, the function selects all the boxes 
+  /**When the mouse hovers over a column, the function selects all the boxes 
 in that column that are not already marked as "active". If it is player 1's turn (turn is even), the last unmarked 
-box in the column is highlighted in red. If it is player 2's turn (turn 
-    is odd), the last unmarked box in the column is highlighted in yellow. 
+box in the column is highlighted in red. If it is player 2's turn, the last unmarked box in the column is highlighted in yellow. 
 When the mouse leaves the column, the highlighting is removed.
-  */
+  **/
   function markBox() {
     let markedColumns = document.querySelectorAll(".game-column");
     markedColumns.forEach(function (column) {
       column.addEventListener("mouseover", function () {
-        // column.style.backgroundColor = "cyan"; can be used to display marked column
         let boxes = Array.from(column.querySelectorAll(".game-box"));
         boxes = boxes.filter((x) => !x.classList.contains("active"));
-        
+
         if (nextPlayer1Color == "rgb(255, 0, 0)") {
           if (boxes.length > 0) {
             boxes.at(-1).style.backgroundColor = "red";
@@ -81,18 +79,18 @@ When the mouse leaves the column, the highlighting is removed.
       });
     });
   }
-  /* Adds event listeners to the columns and listens for click. Based on 
-turn either red or yellow will be used as argument when calling the addCoin
-function. Only allows the player to chose a column if the playercolumn is not
-full.
-*/
+  /** Adds event listeners to the columns and listens for click. Based
+   * on if #p1-turn background-color is rgb(255,0,0) or not it will be used
+   * as argument when calling the addCoin function. Only allows the player
+   * to chose a column if the playercolumn is not full.
+   **/
   function choseColumn() {
     let playerColumn = 0;
 
     for (let i = 0; i < gameColumns.length; i++)
       gameColumns[i].addEventListener("click", function () {
         playerColumn = i;
-      
+
         if (gameArrays[playerColumn].length < 6) {
           if (nextPlayer1Color == "rgb(255, 0, 0)") {
             addCoin(playerColumn, "red");
@@ -119,22 +117,20 @@ full.
   markBox();
   choseColumn();
 
-  /*Pushes a value of either "red" or "yellow" (color) to the gameArray which represents the  
- column clicked by the player. Result should look accordingly:
- gameArrays = [['red','yellow'], ['yellow'], ['red','red'], [], [], [], []]
- 
- */
-  //Runs the displayCoins and checkWinner functions.
-
+  /**Pushes a value of either "red" or "yellow" (color) to the gameArray which
+   * represents the column clicked by the player. Result should look accordingly:
+   * gameArrays = [['red','yellow'], ['yellow'], ['red','red'], [], [], [], []].
+   * Runs the displayCoins and checkWinner functions.
+   **/
   function addCoin(playerColumn, color) {
     gameArrays[playerColumn].push(color);
     displayCoins(color);
     checkWinner(color);
     turn = 0;
     for (let i = 0; i < gameArrays.length; i++) {
-        turn += gameArrays[i].length;
+      turn += gameArrays[i].length;
     }
-      }
+  }
 
   /**Displays the players chosen position. Loops through all the gameArrays 
 and checks if each element is equal to the color parameter (red/yellow). 
@@ -145,9 +141,8 @@ HTML element and adds the class "active" to it.
     for (let i = 0; i < gameArrays.length; i++) {
       for (let j = 0; j < gameArrays[i].length; j++) {
         if (gameArrays[i][j] == color) {
-          document.getElementById(
-            `x${j + 1},y${i + 1}`
-          ).style.backgroundColor = color;
+          document.getElementById(`x${j + 1},y${i + 1}`).style.backgroundColor =
+            color;
           document
             .getElementById(`x${j + 1},y${i + 1}`)
             .classList.add("active");
@@ -155,10 +150,9 @@ HTML element and adds the class "active" to it.
       }
     }
   }
-  //Checks all result variations. Draw, Horizantal, Vertical and Diagonal.
+  /**Checks all result variations. Draw, Horizantal, Vertical and Diagonal.**/
   function checkWinner(color) {
     //Draw, will occur when the whole board is filled.
-    //Resets turn to 0 and runs the afterWinMenu function.
     if (turn > 40) {
       let draw = true;
       afterWinMenu(color, draw);
@@ -240,19 +234,19 @@ all boxes and sets the background color to white.*/
       box.classList.remove("active");
       box.style.backgroundColor = "white";
     });
-       gameArrays = [[], [], [], [], [], [], []];
+    gameArrays = [[], [], [], [], [], [], []];
   }
 
-/*Displays afterWinModal and presents draw or winner based on values 
+  /*Displays afterWinModal and presents draw or winner based on values 
 passed on by checkWinner()*/
   function afterWinMenu(color, draw) {
-    resetBoard();
     if (draw) {
-      }
+    }
     afterWinModal.style.display = "flex";
     const afterWinSpan = document.getElementsByClassName("close")[1];
     afterWinSpan.onclick = function () {
       afterWinModal.style.display = "none";
+      resetBoard();
     };
 
     if (draw == true) {
@@ -262,17 +256,17 @@ passed on by checkWinner()*/
     }
     newRound();
   }
-//Add 
-function newRound() {
+  //Add
+  function newRound() {
     const newRoundButton = document.getElementById("new-round-button");
     newRoundButton.onclick = function () {
       afterWinModal.style.display = "none";
+      resetBoard();
     };
   }
   function quitGame() {
     window.location.reload();
   }
-
 
   //Add event listeners to game buttons
   const resetBoardBtn = document.getElementById("reset-board-btn");
@@ -282,7 +276,4 @@ function newRound() {
   const quitGameBtn = document.getElementsByClassName("quit-game-btn");
   quitGameBtn[0].addEventListener("click", quitGame);
   quitGameBtn[1].addEventListener("click", quitGame);
-
-
-
 }
