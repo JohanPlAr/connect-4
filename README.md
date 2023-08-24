@@ -39,6 +39,7 @@ The site can be accessed by this [link](https://johanplar.github.io/connect-4/)
 
   - Positioned at the center of the page for clear visibility.
   - Two buttons let's the user to choose either to start the game or to read the rules of the game.
+
     ![Main Menu](documentation/main-menu.png)
 
 - ##### Start Button
@@ -71,7 +72,7 @@ The site can be accessed by this [link](https://johanplar.github.io/connect-4/)
 
 - #### Players Area
 
-  - Shows which players turn is next controlled in the script.js file.
+  - Shows which players turn is next. Controlled in the script.js file.
   - Shows the score between the players also controlled in the script.js.
 
   ![Players Area Section](documentation/players-area.png)
@@ -168,10 +169,6 @@ In order to confirm the correct functionality, responsiveness, and appearance:
   ![Edge](documentation/responsive-gif.gif)
 
 - The website was checked by devtools implemented in Edge and Chrome browsers.
-
-  - Main Page:
-
-  ![Main Page](documentation/responsiveness-main-page.gif)
 
 * The website was checked with [Responsive Website Design Tester](https://responsivedesignchecker.com/).
 
@@ -271,20 +268,19 @@ In your IDE Terminal, type the following command to clone my repository:
 
 ## Future improvements
 
--
-- add custom 404 page;
+- Add play against computer option
 
-- #### Media
+## Media
 
-  - Google Fonts
-  - Favicon
+- Google Fonts
+- Favicon
 
-- #### Tools
+## Tools
 
-  - [EzGif](https://ezgif.com) was used to resize GIF images.
-  - [cooler](https://coolors.co/) was used to create the color palette.
-  - [mockupGen](https://websitemockupgenerator.com/) was used for responsive mockup png.
-  - [image optimizer](http://www.imageoptimizer.net/) was used to resize images.
+- [EzGif](https://ezgif.com) was used to resize GIF images.
+- [cooler](https://coolors.co/) was used to create the color palette.
+- [mockupGen](https://websitemockupgenerator.com/) was used for responsive mockup png.
+- [image optimizer](http://www.imageoptimizer.net/) was used to resize images.
 
 ## Acknowledgments
 
