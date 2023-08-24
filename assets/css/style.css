@@ -138,6 +138,8 @@ ul li {
     border-radius: 10px;
 }
 
+/*Lets the player be able to se the winning gameboard 
+behind the after-win-menu when opacity ocillates*/
 @keyframes opacityAnimation {
     0% {
         opacity: 1;
@@ -162,8 +164,6 @@ ul li {
     display: none;
 
 }
-
-/*Game-area*/
 
 .game-area {
     display: flex;

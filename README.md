@@ -141,19 +141,19 @@ The site can be accessed by this [link](https://johanplar.github.io/connect-4/)
 
 #### Main Menu
 
-- [Main Menu.](documentation/main-menu-display.png)
+- ![Main Menu](documentation/main-menu-display.png)
 
 #### Rules
 
-- [Home Page. Tablet Screen](documentation/rules-display.png)
+- ![Home Page Tablet Screen](documentation/rules-display.png)
 
 #### The Game
 
-- [Home Page. Desktop Screen](documentation/the-game-display.png)
+- ![Home Page Desktop Screen](documentation/the-game-display.png)
 
 #### Winner
 
-- [Home Page. Desktop Screen](documentation/winner-display.png)
+- ![Home Page Desktop Screen](documentation/winner-display.png)
 
 ---
 
@@ -252,6 +252,10 @@ In order to confirm the correct functionality, responsiveness, and appearance:
   #### Home page
 
   ![Home Page Lighthouse](documentation/lighthouse.png)
+
+- ### JavaScript
+  - One warning on possibly confusing semantics.
+    ![Javascript tester jshint](documentation/jshint.png)
 
 ---
 

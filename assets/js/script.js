@@ -85,15 +85,11 @@ When the mouse leaves the column, the highlighting is removed.
    * to chose a column if the playercolumn is not full.
    **/
   function choseColumn() {
-    let playerColumn = 0;
-
     for (let i = 0; i < gameColumns.length; i++)
       gameColumns[i].addEventListener("click", function () {
-        playerColumn = i;
-
-        if (gameArrays[playerColumn].length < 6) {
+        if (gameArrays[i].length < 6) {
           if (nextPlayer1Color == "rgb(255, 0, 0)") {
-            addCoin(playerColumn, "red");
+            addCoin(i, "red");
             nextPlayer1.style.backgroundColor = "white";
             nextPlayer1Color = "";
             nextPlayer2.style.backgroundColor = "yellow";
@@ -102,7 +98,7 @@ When the mouse leaves the column, the highlighting is removed.
             document.getElementsByClassName("player-turn-text")[0].innerText =
               "";
           } else {
-            addCoin(playerColumn, "yellow");
+            addCoin(i, "yellow");
             nextPlayer2.style.backgroundColor = "white";
             nextPlayer1Color = "rgb(255, 0, 0)";
             nextPlayer1.style.backgroundColor = "red";
