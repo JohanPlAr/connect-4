@@ -206,6 +206,14 @@ ul li {
     justify-content: center;
 }
 
+/*Footer*/
+footer {
+    text-align: center;
+    margin-top: 1em;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+}
 
 /*Big screen media query*/
 @media only screen and (min-width: 665px) {
@@ -247,13 +255,4 @@ ul li {
         width: 630px;
     }
 
-}
-
-/*Footer*/
-footer {
-    text-align: center;
-    margin-top: 1em;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
 }
