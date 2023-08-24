@@ -43,10 +43,12 @@ The site can be accessed by this [link](https://johanplar.github.io/connect-4/)
     ![Main Menu](documentation/main-menu.png)
 
 - ##### Start Button
-  - By clicking the Start Button the Game Area is being shown and the Main Menu is hidden. This is achieved by closing a modal and setting the Game Area to be displayed. No redirection of URL:s are being used instead the the stylesheet is being manipulated by the script.js file.
+
+  - By clicking the Start Button the Game Area is being shown and the Main Menu is hidden. No redirection of URL:s are being used instead the stylesheet is being manipulated by the script.js file.
+
 - ##### Rules Button
 
-  - By clicking the Rules button the user will access CONNECT 4- list of rules placed on top of the main menu modal. A span with a closing x is being used to allow the user to return to the Main Menu
+  - By clicking the Rules button the user will access CONNECT 4- list of rules placed on top of the rules modal. A span with a closing x is being used to allow the user to return to the Main Menu.
 
 - ###### Rules Modal
 
@@ -60,7 +62,7 @@ The site can be accessed by this [link](https://johanplar.github.io/connect-4/)
   - Represent:
 
     - A simple yet enjoyable game experience.
-    - Clean and simple game mechanics to allow an intuitive interaction.
+    - Clean game mechanics to allow an intuitive interaction.
     - Automatically Checks who's is winning and keeps track of the score.
 
   ![Home Page](documentation/home-page.png)
@@ -72,7 +74,7 @@ The site can be accessed by this [link](https://johanplar.github.io/connect-4/)
 
 - #### Game Buttons area
 
-  - Contains three buttons which lets the user to Reset the Board, Reset the Score and Quit the Game.
+  - Contains three buttons which lets the user Reset the Board, Reset the Score and Quit the Game.
     ![Game Buttons Section](documentation/game-buttons.png)
 
 - #### Players Area
@@ -194,13 +196,17 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 | feature            | action                          | expected result                               | tested | passed | comments |
 | ------------------ | ------------------------------- | --------------------------------------------- | ------ | ------ | -------- |
 | Main Menu          |                                 |                                               |        |        |          |
-| Start Game         | Click on the Start Game Button  | The Modal is blocked and Game appear          | Yes    | Yes    | -        |
+| Start Game         | Click on the Start Game Button  | The Main Menu is blocked and Game appear      | Yes    | Yes    | -        |
 | Rules              | Click on Rules Button           | The Rules list is displayed                   | Yes    | Yes    | -        |
 | The Game           |                                 |                                               |        |        |          |
 | Game Board         | Click on a column in the board  | Red or yellow coin placed at bottom of column | Yes    | Yes    | -        |
 | Reset Board Button | Click on the Reset Board Button | The board is cleared of all coins             | Yes    | Yes    | -        |
 | Reset Score Button | Click on the Reset Score Button | The scores are set to zero                    | Yes    | Yes    | -        |
 | Quit Game Button   | Click on the Quit Game Button   | Exits the Game and Opens the Main Menu        | Yes    | Yes    | -        |
+
+### Flowchart
+
+-![CONNECT 4 Flowchart](documentation/flowchart.png)
 
 ### JavaScript diagram
 
@@ -210,21 +216,17 @@ In order to confirm the correct functionality, responsiveness, and appearance:
 
 1. Game turn logic issue when turn counter was used to calculate draw.
 
+- Solution - Game turn logic was changed so that the turn was set by calculating the objects in the GameArray.
+
 2. Game turn logic forced every new round to be started by player 1.
+
+- Solution - chooseColumn was changed to check the background color property of #p1-turn span instead of odd or even turns.
 
 3. The check winner algo had uneccessary combinations initially.
 
-- ##### Solved bugs
+- Solution - Check winner algo was reduced to cover only 5 options instead of previously 7.
 
-  1. Game turn logic was changed so that the turn was set by calculating the objects in the GameArray.
-
-  2. The chooseColumn was changed to check the background color property of #p1-turn span instead of odd or even turns.
-
-  3. Check winner algo was reduced to cover only 5 options instead of previously 7.
-
-  ***
-
-- ##### Unsolved bugs
+- #### Unsolved bugs
   - None.
 
 ---
@@ -286,7 +288,7 @@ In your IDE Terminal, type the following command to clone my repository:
 - [cooler](https://coolors.co/) was used to create the color palette.
 - [mockupGen](https://websitemockupgenerator.com/) was used for responsive mockup png.
 - [image optimizer](http://www.imageoptimizer.net/) was used to resize images.
-- [Miro](miro.com for flowchart
+- [Miro](http://www.miro.com/) for flowchart creation.
 
 ## Acknowledgments
 
