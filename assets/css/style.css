@@ -140,17 +140,22 @@ ul li {
 
 @keyframes opacityAnimation {
     0% {
-        opacity: 0.5;
+        opacity: 1;
     }
 
-    100% {
+    30% {
+        opacity: 0.7;
+    }
+
+    60% {
         opacity: 1;
     }
 }
 
 #after-win-menu {
-    animation: opacityAnimation 4s ease;
+    animation: opacityAnimation 5s ease-in-out infinite;
 }
+
 
 /*Game-area*/
 .the-game {
