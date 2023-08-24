@@ -138,6 +138,20 @@ ul li {
     border-radius: 10px;
 }
 
+@keyframes opacityAnimation {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#after-win-menu {
+    animation: opacityAnimation 4s ease;
+}
+
 /*Game-area*/
 .the-game {
     display: none;
