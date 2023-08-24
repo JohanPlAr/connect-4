@@ -44,13 +44,11 @@ function runGame() {
   
   let nextPlayer1Style = getComputedStyle(nextPlayer1);
   let nextPlayer1Color = nextPlayer1Style.backgroundColor;
-  console.log(nextPlayer1Color);let nextPlayer2 = document.getElementById("p2-turn");
   document.getElementsByClassName("player-turn-text")[0].innerText =
     "Next Play";
 
   /*When the mouse hovers over a column, the function selects all the boxes 
-in that column that are not already marked as "active" and logs them to 
-the console. If it is player 1's turn (turn is even), the last unmarked 
+in that column that are not already marked as "active". If it is player 1's turn (turn is even), the last unmarked 
 box in the column is highlighted in red. If it is player 2's turn (turn 
     is odd), the last unmarked box in the column is highlighted in yellow. 
 When the mouse leaves the column, the highlighting is removed.
@@ -62,7 +60,6 @@ When the mouse leaves the column, the highlighting is removed.
         // column.style.backgroundColor = "cyan"; can be used to display marked column
         let boxes = Array.from(column.querySelectorAll(".game-box"));
         boxes = boxes.filter((x) => !x.classList.contains("active"));
-        console.log(boxes);
         
         if (nextPlayer1Color == "rgb(255, 0, 0)") {
           if (boxes.length > 0) {
@@ -84,8 +81,7 @@ When the mouse leaves the column, the highlighting is removed.
       });
     });
   }
-  /* Adds event listeners to the columns and listens for click. When a column is 
-clicked the function will console.log the column and turn number. Based on 
+  /* Adds event listeners to the columns and listens for click. Based on 
 turn either red or yellow will be used as argument when calling the addCoin
 function. Only allows the player to chose a column if the playercolumn is not
 full.
@@ -97,8 +93,6 @@ full.
       gameColumns[i].addEventListener("click", function () {
         playerColumn = i;
       
-        console.log(`Chosen Column: ${playerColumn}`);
-        console.log(`Turn: ${turn}`);
         if (gameArrays[playerColumn].length < 6) {
           if (nextPlayer1Color == "rgb(255, 0, 0)") {
             addCoin(playerColumn, "red");
@@ -136,19 +130,17 @@ full.
     gameArrays[playerColumn].push(color);
     displayCoins(color);
     checkWinner(color);
-    console.log(gameArrays[playerColumn]);
     turn = 0;
     for (let i = 0; i < gameArrays.length; i++) {
         turn += gameArrays[i].length;
     }
       }
 
-  /*Displays the players chosen position. Loops through all the gameArrays 
+  /**Displays the players chosen position. Loops through all the gameArrays 
 and checks if each element is equal to the color parameter (red/yellow). 
 If a match is found, it changes the background color of the corresponding 
 HTML element and adds the class "active" to it.
-
-*/
+**/
   function displayCoins(color) {
     for (let i = 0; i < gameArrays.length; i++) {
       for (let j = 0; j < gameArrays[i].length; j++) {
@@ -169,7 +161,6 @@ HTML element and adds the class "active" to it.
     //Resets turn to 0 and runs the afterWinMenu function.
     if (turn > 40) {
       let draw = true;
-      console.log("It's a draw");
       afterWinMenu(color, draw);
     }
     //Iterates through all gameArray values.
@@ -183,7 +174,6 @@ HTML element and adds the class "active" to it.
           gameArrays[i + 2][j] == color &&
           gameArrays[i + 3][j] == color
         ) {
-          console.log(`${color} wins`);
           gameScore(color);
           afterWinMenu(color);
         }
@@ -195,7 +185,6 @@ HTML element and adds the class "active" to it.
           gameArrays[i][j + 2] == color &&
           gameArrays[i][j + 3] == color
         ) {
-          console.log(`${color} wins`);
           gameScore(color);
           afterWinMenu(color);
         }
@@ -207,7 +196,6 @@ HTML element and adds the class "active" to it.
           gameArrays[i + 2][j + 2] == color &&
           gameArrays[i + 3][j + 3] == color
         ) {
-          console.log(`${color} wins`);
           gameScore(color);
           afterWinMenu(color);
         }
@@ -219,7 +207,6 @@ HTML element and adds the class "active" to it.
           gameArrays[i - 2][j + 2] == color &&
           gameArrays[i - 3][j + 3] == color
         ) {
-          console.log(`${color} wins`);
           gameScore(color);
           afterWinMenu(color);
         }
@@ -236,7 +223,6 @@ HTML element and adds the class "active" to it.
       p2Score += 1;
       document.getElementById("p2-score").innerText = `Score ${p2Score}`;
     }
-    console.log(p1Score, p2Score);
   }
   //Resets the score to 0 and displays it to score area
   function resetScore() {
