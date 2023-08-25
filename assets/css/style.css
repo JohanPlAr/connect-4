@@ -1,3 +1,5 @@
+/*Contains style for index.html and 404-page-not-found*/
+
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=IBM+Plex+Serif&family=Zen+Kaku+Gothic+Antique&display=swap');
 
 /*Set colors and fonts in root to enable easier redisgn*/
@@ -277,4 +279,8 @@ footer {
         width: 630px;
     }
 
+}
+
+.page-not-found {
+    background-color: var(--primary-color);
 }
