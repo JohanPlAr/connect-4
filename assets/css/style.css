@@ -128,37 +128,6 @@ ul li {
     cursor: pointer
 }
 
-#after-win-menu {
-    text-align: start;
-    margin-top: 15em;
-    width: fit-content;
-    height: fit-content;
-    background-color: white;
-    text-transform: uppercase;
-    border-radius: 10px;
-}
-
-/*Lets the player be able to se the winning gameboard 
-behind the after-win-menu when opacity ocillates*/
-@keyframes opacityAnimation {
-    0% {
-        opacity: 1;
-    }
-
-    30% {
-        opacity: 0.7;
-    }
-
-    60% {
-        opacity: 1;
-    }
-}
-
-#after-win-menu {
-    animation: opacityAnimation 5s ease-in-out infinite;
-}
-
-
 /*Game-area*/
 .the-game {
     display: none;
@@ -223,6 +192,36 @@ behind the after-win-menu when opacity ocillates*/
 .player-turn {
     display: flex;
     justify-content: center;
+}
+
+#after-win-menu {
+    text-align: start;
+    margin-top: 15em;
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+/*Lets the player be able to se the winning gameboard 
+behind the after-win-menu when opacity oscillates*/
+@keyframes opacityAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 0.7;
+    }
+
+    60% {
+        opacity: 1;
+    }
+}
+
+#after-win-menu {
+    animation: opacityAnimation 5s ease-in-out infinite;
 }
 
 /*Footer*/

@@ -1,11 +1,11 @@
 // Wait for the DOM to finish loading before running the game
 // Get the button elements and add event listeners to them
-// Display the game and set main menu to display none when click on open game button
+// Display the game and set main menu to display none and the game to block when click on open game button
 // Open rules modal when click on rules button
-// Define after-win-modal for afterWin function
+// Get after-win-element for afterWin function
 // Close read rules modal when clicking on span
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const openGameBtn = document.getElementById("open-game-btn");
   const readRulesBtn = document.getElementById("read-rules-btn");
   const theGame = document.querySelector(".the-game");
@@ -28,11 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
   runGame();
 });
 
-//Contains the game functions
-//Sets turns to 0
-//Sets Score to 0
-//Displays next play for user
-
+/**runGame() contains all the the game functions and all the game button controls. Lets
+ * the player mark and the choose a column. Automatically tests for winner. Activates a
+ * winning modal and keeps track of the score. Manipulates p1-turn div.
+ */
 function runGame() {
   let gameArrays = [[], [], [], [], [], [], []];
   let turn = 0;
@@ -47,11 +46,13 @@ function runGame() {
   document.getElementsByClassName("player-turn-text")[0].innerText =
     "Next Play";
 
-  /**When the mouse hovers over a column, the function selects all the boxes 
-in that column that are not already marked as "active". If it is player 1's turn (turn is even), the last unmarked 
-box in the column is highlighted in red. If it is player 2's turn, the last unmarked box in the column is highlighted in yellow. 
-When the mouse leaves the column, the highlighting is removed.
-  **/
+  /**Functions purpose is to guide the players when placing their game coins.
+   * When the mouse hovers over a column, the function selects all the boxes
+   * in the column that are not marked as "active". If it is player 1's turn,
+   * the last non active box in the column is highlighted in red. If it is player 2's turn, the
+   * last unmarked box in the column is highlighted in yellow. When the mouse leaves the column,
+   * the highlighting is removed.
+   */
   function markBox() {
     let markedColumns = document.querySelectorAll(".game-column");
     markedColumns.forEach(function (column) {
@@ -82,8 +83,9 @@ When the mouse leaves the column, the highlighting is removed.
   /** Adds event listeners to the columns and listens for click. Based
    * on if #p1-turn background-color is rgb(255,0,0) or not it will be used
    * as argument when calling the addCoin function. Only allows the player
-   * to chose a column if the playercolumn is not full.
-   **/
+   * to chose a column if the playercolumn is not full. Manipulates player-
+   * turn-text.
+   */
   function choseColumn() {
     for (let i = 0; i < gameColumns.length; i++)
       gameColumns[i].addEventListener("click", function () {
@@ -114,10 +116,10 @@ When the mouse leaves the column, the highlighting is removed.
   choseColumn();
 
   /**Pushes a value of either "red" or "yellow" (color) to the gameArray which
-   * represents the column clicked by the player. Result should look accordingly:
+   * represents the column clicked by the player. Result should be a variation of the following:
    * gameArrays = [['red','yellow'], ['yellow'], ['red','red'], [], [], [], []].
    * Runs the displayCoins and checkWinner functions.
-   **/
+   */
   function addCoin(playerColumn, color) {
     gameArrays[playerColumn].push(color);
     displayCoins(color);
@@ -132,7 +134,7 @@ When the mouse leaves the column, the highlighting is removed.
 and checks if each element is equal to the color parameter (red/yellow). 
 If a match is found, it changes the background color of the corresponding 
 HTML element and adds the class "active" to it.
-**/
+*/
   function displayCoins(color) {
     for (let i = 0; i < gameArrays.length; i++) {
       for (let j = 0; j < gameArrays[i].length; j++) {
@@ -146,13 +148,14 @@ HTML element and adds the class "active" to it.
       }
     }
   }
-  /**Checks all result variations. Draw, Horizantal, Vertical and Diagonal.**/
+  /**Checks all result variations. Draw, Horizontal, Vertical and Diagonal.*/
   function checkWinner(color) {
     //Draw, will occur when the whole board is filled.
     if (turn > 40) {
       let draw = true;
       afterWinMenu(color, draw);
     }
+
     //Iterates through all gameArray values.
     for (let i = 0; i < gameArrays.length; i++) {
       for (let j = 0; j < gameArrays[i].length; j++) {
@@ -178,6 +181,7 @@ HTML element and adds the class "active" to it.
           gameScore(color);
           afterWinMenu(color);
         }
+
         //Checks Diagonal win ⇗
         if (
           i < 4 &&
@@ -189,6 +193,7 @@ HTML element and adds the class "active" to it.
           gameScore(color);
           afterWinMenu(color);
         }
+
         //Checks Diagonal win ⇖
         if (
           i > 2 &&
@@ -203,7 +208,7 @@ HTML element and adds the class "active" to it.
       }
     }
   }
-  //Adds Score after a win and displays it in the score area.
+  /**Adds Score after a win and displays it in the score area.*/
   function gameScore(color) {
     if (color == "red") {
       p1Score += 1;
@@ -214,7 +219,7 @@ HTML element and adds the class "active" to it.
       document.getElementById("p2-score").innerText = `Score ${p2Score}`;
     }
   }
-  //Resets the score to 0 and displays it to score area
+  /**Resets the score to 0 and displays it to score area*/
   function resetScore() {
     let p1Score = 0;
     let p2Score = 0;
@@ -222,7 +227,7 @@ HTML element and adds the class "active" to it.
     document.getElementById("p2-score").innerText = `Score ${p2Score}`;
   }
 
-  /*Resets the game board, nulls gameArrays, removes "active" status from 
+  /**Resets the game board, nulls gameArrays, removes "active" status from 
 all boxes and sets the background color to white.*/
   function resetBoard() {
     let boxes = document.querySelectorAll(".game-box");
@@ -233,8 +238,8 @@ all boxes and sets the background color to white.*/
     gameArrays = [[], [], [], [], [], [], []];
   }
 
-  /*Displays afterWinModal and presents draw or winner based on values 
-passed on by checkWinner()*/
+  /**Displays afterWinModal and presents draw or winner based on values 
+passed on by checkWinner(). Runs resetBoard upon clicking on closing span.*/
   function afterWinMenu(color, draw) {
     if (draw) {
     }
@@ -252,7 +257,8 @@ passed on by checkWinner()*/
     }
     newRound();
   }
-  //Add
+  /**Lets the user close the after-win-menu and start a new round by clicking
+   * the new round button. Will resetBoard upon click.*/
   function newRound() {
     const newRoundButton = document.getElementById("new-round-button");
     newRoundButton.onclick = function () {
@@ -260,6 +266,7 @@ passed on by checkWinner()*/
       resetBoard();
     };
   }
+  /**Reloads the page which reactivates the main menu*/
   function quitGame() {
     window.location.reload();
   }

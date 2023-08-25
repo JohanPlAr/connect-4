@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,131 +8,148 @@
     <meta name="keywords" content="Game, Mobile-game, Connect-4, Strategy, Fun">
     <meta name="author" content="Johan Plym Arkert">
     <link rel="stylesheet" href="assets/css/style.css">
-<!-- The Favicons were created using https://favicon.io/favicon-converter/ -->
+    <!-- The Favicons were created using https://favicon.io/favicon-converter/ -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
     <title>Connect-4</title>
 </head>
+
 <body>
     <header>
-    <h1>Connect 4</h1>
-</header>
-<main>
-    <div class="main-menu">
-<button id="open-game-btn" class="main-menu-btn">Start Game</button>
-<button id="read-rules-btn" class="main-menu-btn">Rules</button>
-</div>
-       <div id="rules-modal" class="modal">
-        <div id="rules-box">
-            <span class="close">&times;</span>
-            <h2>CONNECT 4 Rules</h2>
-        <ul id="rules-list">
-            <li><strong>Objective:</strong> Connect four colored discs in a row, vertically, horizontally, or diagonally</li>
-        <li><strong>Setup:</strong> Two players are assigned a color, either yellow or red. The board consists of six rows and seven columns</li>
-        <li><strong>Turns:</strong> Players take turns dropping one of their discs into the slots at the top columns.
-        The discs will fall to the lowest available position in the chosen column</li>
-        <li><strong>Alternating Turns:</strong> Only one disc can be dropped per player each turn</li>
-        <li><strong>Blocking:</strong> Use strategy to block your opponent's attempts to connect four discs in a row</li>
-        <li><strong>Winning:</strong> The game ends when a player connects four of their discs in a row</li>
-        <li><strong>Draw:</strong> If the game board fills up before either player connects four discs in a row, the game is a draw</li> 
-        <li><strong>Score:</strong> If players choose to continue in a new round a score counter keeps track of the previous results.
-        <li>Have fun playing Connect 4!</li></ul>
+        <h1>Connect 4</h1>
+    </header>
+    <!--main contains main-menu, rules modal, the game and after-win-modal which are 
+    not displayed all at once but controlled by style.css and script.js.-->
+    <main>
+        <div class="main-menu">
+            <button id="open-game-btn" class="main-menu-btn">Start Game</button>
+            <button id="read-rules-btn" class="main-menu-btn">Rules</button>
         </div>
-    </div>
+        <div id="rules-modal" class="modal">
+            <div id="rules-box">
+                <span class="close">&times;</span>
+                <h2>CONNECT 4 Rules</h2>
+                <ul id="rules-list">
+                    <li><strong>Objective:</strong> Connect four colored discs in a row, vertically, horizontally, or
+                        diagonally</li>
+                    <li><strong>Setup:</strong> Two players are assigned a color, either yellow or red. The board
+                        consists of six rows and seven columns</li>
+                    <li><strong>Turns:</strong> Players take turns dropping one of their discs into the slots at the top
+                        columns.
+                        The discs will fall to the lowest available position in the chosen column</li>
+                    <li><strong>Alternating Turns:</strong> Only one disc can be dropped per player each turn</li>
+                    <li><strong>Blocking:</strong> Use strategy to block your opponent's attempts to connect four discs
+                        in a row</li>
+                    <li><strong>Winning:</strong> The game ends when a player connects four of their discs in a row</li>
+                    <li><strong>Draw:</strong> If the game board fills up before either player connects four discs in a
+                        row, the game is a draw</li>
+                    <li><strong>Score:</strong> If players choose to continue in a new round a score counter keeps track
+                        of the previous results.
+                    <li>Have fun playing Connect 4!</li>
+                </ul>
+            </div>
+        </div>
 
-    <div class="the-game">
-        <div class="game-area">
-            <div class="game-column" id="column1">
-                <div class="game-box" id="x6,y1"></div>
-                <div class="game-box" id="x5,y1"></div>
-                <div class="game-box" id="x4,y1"></div>
-                <div class="game-box" id="x3,y1"></div>
-                <div class="game-box" id="x2,y1"></div>
-                <div class="game-box" id="x1,y1"></div>
+        <div class="the-game">
+            <div class="game-area">
+                <div class="game-column" id="column1">
+                    <div class="game-box" id="x6,y1"></div>
+                    <div class="game-box" id="x5,y1"></div>
+                    <div class="game-box" id="x4,y1"></div>
+                    <div class="game-box" id="x3,y1"></div>
+                    <div class="game-box" id="x2,y1"></div>
+                    <div class="game-box" id="x1,y1"></div>
+                </div>
+                <div class="game-column" id="column2">
+                    <div class="game-box" id="x6,y2"></div>
+                    <div class="game-box" id="x5,y2"></div>
+                    <div class="game-box" id="x4,y2"></div>
+                    <div class="game-box" id="x3,y2"></div>
+                    <div class="game-box" id="x2,y2"></div>
+                    <div class="game-box" id="x1,y2"></div>
+                </div>
+                <div class="game-column" id="column3">
+                    <div class="game-box" id="x6,y3"></div>
+                    <div class="game-box" id="x5,y3"></div>
+                    <div class="game-box" id="x4,y3"></div>
+                    <div class="game-box" id="x3,y3"></div>
+                    <div class="game-box" id="x2,y3"></div>
+                    <div class="game-box" id="x1,y3"></div>
+                </div>
+                <div class="game-column" id="column4">
+                    <div class="game-box" id="x6,y4"></div>
+                    <div class="game-box" id="x5,y4"></div>
+                    <div class="game-box" id="x4,y4"></div>
+                    <div class="game-box" id="x3,y4"></div>
+                    <div class="game-box" id="x2,y4"></div>
+                    <div class="game-box" id="x1,y4"></div>
+                </div>
+                <div class="game-column" id="column5">
+                    <div class="game-box" id="x6,y5"></div>
+                    <div class="game-box" id="x5,y5"></div>
+                    <div class="game-box" id="x4,y5"></div>
+                    <div class="game-box" id="x3,y5"></div>
+                    <div class="game-box" id="x2,y5"></div>
+                    <div class="game-box" id="x1,y5"></div>
+                </div>
+                <div class="game-column" id="column6">
+                    <div class="game-box" id="x6,y6"></div>
+                    <div class="game-box" id="x5,y6"></div>
+                    <div class="game-box" id="x4,y6"></div>
+                    <div class="game-box" id="x3,y6"></div>
+                    <div class="game-box" id="x2,y6"></div>
+                    <div class="game-box" id="x1,y6"></div>
+                </div>
+                <div class="game-column" id="column7">
+                    <div class="game-box" id="x6,y7"></div>
+                    <div class="game-box" id="x5,y7"></div>
+                    <div class="game-box" id="x4,y7"></div>
+                    <div class="game-box" id="x3,y7"></div>
+                    <div class="game-box" id="x2,y7"></div>
+                    <div class="game-box" id="x1,y7"></div>
+                </div>
             </div>
-            <div class="game-column" id="column2">
-                <div class="game-box" id="x6,y2"></div>
-                <div class="game-box" id="x5,y2"></div>
-                <div class="game-box" id="x4,y2"></div>
-                <div class="game-box" id="x3,y2"></div>
-                <div class="game-box" id="x2,y2"></div>
-                <div class="game-box" id="x1,y2"></div>
-            </div>
-            <div class="game-column" id="column3">
-                <div class="game-box" id="x6,y3"></div>
-                <div class="game-box" id="x5,y3"></div>
-                <div class="game-box" id="x4,y3"></div>
-                <div class="game-box" id="x3,y3"></div>
-                <div class="game-box" id="x2,y3"></div>
-                <div class="game-box" id="x1,y3"></div>
-            </div>
-            <div class="game-column" id="column4">
-                <div class="game-box" id="x6,y4"></div>
-                <div class="game-box" id="x5,y4"></div>
-                <div class="game-box" id="x4,y4"></div>
-                <div class="game-box" id="x3,y4"></div>
-                <div class="game-box" id="x2,y4"></div>
-                <div class="game-box" id="x1,y4"></div>
-            </div>
-            <div class="game-column" id="column5">
-                <div class="game-box" id="x6,y5"></div>
-                <div class="game-box" id="x5,y5"></div>
-                <div class="game-box" id="x4,y5"></div>
-                <div class="game-box" id="x3,y5"></div>
-                <div class="game-box" id="x2,y5"></div>
-                <div class="game-box" id="x1,y5"></div>
-            </div>
-            <div class="game-column" id="column6">
-                <div class="game-box" id="x6,y6"></div>
-                <div class="game-box" id="x5,y6"></div>
-                <div class="game-box" id="x4,y6"></div>
-                <div class="game-box" id="x3,y6"></div>
-                <div class="game-box" id="x2,y6"></div>
-                <div class="game-box" id="x1,y6"></div>
-            </div>
-            <div class="game-column" id="column7">
-                <div class="game-box" id="x6,y7"></div>
-                <div class="game-box" id="x5,y7"></div>
-                <div class="game-box" id="x4,y7"></div>
-                <div class="game-box" id="x3,y7"></div>
-                <div class="game-box" id="x2,y7"></div>
-                <div class="game-box" id="x1,y7"></div>
-            </div>
+            <-- after-win-modal will only be visible when a game round is finnished. Controlled by script.js-->
+                <div id="after-win-modal" class="modal">
+                    <div id="after-win-menu">
+                        <span class="close">&times;</span>
+                        <h2 id="winner-text">placeholder</h2>
+                        <div class="in-game-btns">
+                            <button id="new-round-button" type="submit" class="game-btn after-win-btn">New
+                                Round</button>
+                            <button type="button" class="game-btn after-win-btn quit-game-btn">Quit Game</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="in-game-btns">
+                    <button id="reset-board-btn" type="reset" class="game-btn">Reset Board</button>
+                    <button id="reset-score-btn" type="reset" class="game-btn">Reset Score</button>
+                    <button type="submit" class="game-btn quit-game-btn">Quit Game</button>
+                </div>
+                <div id="players-area">
+                    <div id="player-1">
+                        <h2>Player1</h2>
+                        <div class="player-turn-text"></div>
+                        <div class="player-turn">
+                            <div id="p1-turn"></div>
+                        </div>
+                        <div id="p1-score">Score 0</div>
+                    </div>
+                    <div id="player2">
+                        <h2>Player2</h2>
+                        <div class="player-turn-text"></div>
+                        <div class="player-turn">
+                            <div id="p2-turn"></div>
+                        </div>
+                        <div id="p2-score">Score 0</div>
+                    </div>
+                </div>
         </div>
-        <div id="after-win-modal" class="modal">
-            <div id="after-win-menu">
-            <span class="close">&times;</span> 
-            <h2 id="winner-text">placeholder</h2>
-            <div class="in-game-btns">
-                <button id="new-round-button" type="submit" class="game-btn after-win-btn">New Round</button>
-                <button type="button" class="game-btn after-win-btn quit-game-btn">Quit Game</button> 
-            </div>
-        </div>
-      </div>
-        <div id="in-game-btns">
-            <button id="reset-board-btn" type="reset" class="game-btn">Reset Board</button>
-            <button id="reset-score-btn" type="reset" class="game-btn">Reset Score</button> 
-            <button type="submit" class="game-btn quit-game-btn">Quit Game</button>
-        </div>
-    <div id="players-area">
-        <div id="player-1">
-            <h2>Player1</h2>
-            <div class="player-turn-text"></div>
-            <div class="player-turn"><div id="p1-turn"></div></div>
-            <div id="p1-score">Score 0</div>            
-        </div>
-        <div id="player2">
-            <h2>Player2</h2>
-            <div class="player-turn-text"></div>
-            <div class="player-turn"><div id="p2-turn"></div></div>
-            <div id="p2-score">Score 0</div>
-        </div>
-    </div>
-</div>
-</main>
-<footer>Copyright &#169; Johan Plym Arkert</footer>    
-    <script src="assets/js/script.js"></script>    
+    </main>
+    <footer>Copyright &#169; Johan Plym Arkert</footer>
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
