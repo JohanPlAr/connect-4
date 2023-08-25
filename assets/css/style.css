@@ -142,6 +142,12 @@ ul li {
     background-color: blue;
 }
 
+/*Changes cursor type when hover over .game-column. Enhances the user understanding of
+how to interact with the game.*/
+.game-column:hover {
+    cursor: pointer;
+}
+
 .game-box {
     margin: 2vw 2vw 0 2vw;
     height: 10vw;
@@ -162,9 +168,6 @@ ul li {
     margin: 2em 1em;
 }
 
-.game-column:hover {
-    cursor: pointer;
-}
 
 /*Players-Area*/
 #players-area {
@@ -173,7 +176,8 @@ ul li {
     text-align: center;
 }
 
-/*Styles the circle under the Next Play*/
+/*Styles the circle under the Next Play. Controls which player to 
+be next. Change will need to be adressed in to script.js*/
 #p1-turn {
     background-color: red;
 }
